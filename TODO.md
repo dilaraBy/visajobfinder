@@ -108,7 +108,7 @@ Only the missing Definition-of-Done items. Nothing else.
 - **Effort:** 1 day. **Agent:** frontend-engineer.
 
 ### D3. Evidence highlighting in dashboard detail
-- [ ] Reuse `HighlightedDescription` from the paste checker in the dashboard `JobDetail` so matched phrases are visibly highlighted in context (if not already wired).
+- [x] Reuse `HighlightedDescription` from the paste checker in the dashboard `JobDetail` so matched phrases are visibly highlighted in context (if not already wired). Already wired: `JobDetail → ResultPanel → HighlightedDescription` (shared component with the paste checker, covered by `HighlightedDescription.test.tsx`).
 - **Effort:** 1–2 hours. **Agent:** frontend-engineer.
 
 ### D4. Editorial design identity pass (after A2 deploy)
