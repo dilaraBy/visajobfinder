@@ -1,8 +1,11 @@
-name: Deploy dashboard to GitHub Pages
+name: Refresh data and deploy dashboard
 
 on:
   push:
     branches: [master]
+  schedule:
+    # Daily refresh of live Reed/Adzuna listings (06:10 UTC).
+    - cron: "10 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -19,6 +22,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh jobs.json from live sources
+        # The pipeline tolerates individual source failures (recorded in
+        # source_runs); if the whole step fails the deploy still ships the
+        # committed jobs.json snapshot rather than breaking.
+        continue-on-error: true
+        env:
+          REED_API_KEY: ${{ secrets.REED_API_KEY }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: |
+          pip install pytest
+          python -m pytest -q
+          python -m pipeline.build_jobs \
+            --source-adapter reed:live \
+            --source-adapter adzuna:live \
+            --results 50 \
+            --sponsor-register data/sponsor_register/sponsors.csv \
+            --output frontend/public/jobs.json
       - uses: actions/setup-node@v4
         with:
           node-version: 22
