@@ -29,9 +29,9 @@ A portfolio project that is not on GitHub with a live URL does not exist.
 - **Effort:** 1–2 hours. **Agent:** release-engineer.
 
 ### A2. Deploy the frontend
-- [ ] Build the frontend (`npm run build`) and deploy `frontend/dist` to GitHub Pages or Cloudflare Pages.
-- [ ] Ensure `jobs.json` and `sponsors.json` are served and the dashboard + `/check` route work on the public URL (configure SPA fallback / base path for the router).
-- [ ] Add the public URL to the README top section.
+- [x] Build the frontend (`npm run build`) and deploy `frontend/dist` to GitHub Pages or Cloudflare Pages. Deployed via `.github/workflows/deploy-pages.yml` (tests → build with `--base=/visajobfinder/` → Pages). Live at <https://dilarabayram.com/visajobfinder/> (account custom domain; the repo was also flipped public for Pages).
+- [x] Ensure `jobs.json` and `sponsors.json` are served and the dashboard + `/check` route work on the public URL (configure SPA fallback / base path for the router). Router basename + fetches use `import.meta.env.BASE_URL`; `404.html` SPA fallback covers `/check`. Verified live: `/`, `/check`, `jobs.json`, `sponsors.json` all serve.
+- [x] Add the public URL to the README top section.
 - **Acceptance:** a stranger can open one URL, set a visa profile, see labelled jobs, and paste a job at `/check`.
 - **Effort:** half a day (router base-path issues are the usual trap). **Agent:** frontend-engineer.
 

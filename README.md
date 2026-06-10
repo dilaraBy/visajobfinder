@@ -1,5 +1,7 @@
 # VisaJobFinder: Evidence-Backed Visa-Risk Triage
 
+**Live dashboard:** <https://dilarabayram.com/visajobfinder/> — set a visa profile, browse labelled jobs, or paste any job ad at [`/check`](https://dilarabayram.com/visajobfinder/check).
+
 VisaJobFinder is an evidence-backed visa-risk triage project for international students in the UK.
 
 It is not a legal eligibility checker. It is a decision-support tool that highlights sponsor-register matches, right-to-work wording, sponsorship wording, missing evidence, and status-aware risks so users can decide whether to apply, verify first, or move on.
@@ -62,7 +64,10 @@ register vulnerabilities reported by `npm audit` are all in the dev/test
 toolchain (vite/vitest/esbuild, dev-server only) and do not ship in the static
 production build.
 
-The current public jobs file uses sample data. Do not treat it as a live job board yet.
+The current public jobs file is a manually-run snapshot of live Reed and Adzuna
+listings (94 jobs, built 2026-06-10). It is refreshed manually until the
+scheduled daily refresh lands, so listings can be stale — each job shows its
+measured age or an explicit "no posting date".
 
 ## Problem
 
