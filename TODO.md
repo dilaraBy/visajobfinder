@@ -21,10 +21,10 @@ Priority order below is deliberate: visibility first, credibility second, featur
 A portfolio project that is not on GitHub with a live URL does not exist.
 
 ### A1. Initialise git and publish to GitHub
-- [ ] `git init`, add a proper `.gitignore` (node_modules, dist, __pycache__, .pytest_cache, .env, the 11 MB raw GOV.UK CSV — keep only the build script + derived `sponsors.csv` if size allows, or document the download step).
-- [ ] First commit: current state, with a clear message. Then commit **in meaningful units** going forward (one feature/fix per commit) so the history shows process.
+- [x] `git init`, add a proper `.gitignore` (node_modules, dist, __pycache__, .pytest_cache, .env, the 11 MB raw GOV.UK CSV — keep only the build script + derived `sponsors.csv` if size allows, or document the download step).
+- [x] First commit: current state, with a clear message. Then commit **in meaningful units** going forward (one feature/fix per commit) so the history shows process.
 - [ ] Create public GitHub repo `visajobfinder` (or similar). Push.
-- [ ] Verify `.env` and any API keys are NOT in history before pushing.
+- [x] Verify `.env` and any API keys are NOT in history before pushing.
 - **Acceptance:** repo is public, README renders, no secrets, no >50 MB files.
 - **Effort:** 1–2 hours. **Agent:** release-engineer.
 
