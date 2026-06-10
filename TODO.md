@@ -103,8 +103,8 @@ Only the missing Definition-of-Done items. Nothing else.
 - **Effort:** half a day. **Agent:** frontend-engineer.
 
 ### D2. Local tracking + export/import
-- [ ] Per-job status (interested / applied / rejected / offer), note, deadline — `localStorage` only.
-- [ ] Export all local data as one JSON file; import restores it. No network calls.
+- [x] Per-job status (interested / applied / rejected / offer), note, deadline — `localStorage` only. `JobTracking` panel inside `JobDetail`; status badge bubbles up to `JobCard` so the list shows tracking state at a glance. Storage key `vjf_job_tracking_v1`; empty entries are deleted from the map so the store stays small.
+- [x] Export all local data as one JSON file; import restores it. No network calls. `DataPanel` uses `URL.createObjectURL` for the download and `FileReader.text()` for import; the format is `{ app, version, exported_at, visa_profile, tracking }`. Imports sanitise unknown statuses, malformed deadlines, and non-object entries instead of failing the whole file; non-VJF JSON is flagged but partial data is still merged.
 - **Effort:** 1 day. **Agent:** frontend-engineer.
 
 ### D3. Evidence highlighting in dashboard detail

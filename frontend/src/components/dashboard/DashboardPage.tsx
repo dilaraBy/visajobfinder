@@ -22,9 +22,16 @@ import {
   paramsWithFilters,
   type ClassifiedJob,
 } from "@/lib/filters";
+import {
+  TRACKING_STORAGE_KEY,
+  withEntry,
+  type TrackingEntry,
+  type TrackingState,
+} from "@/lib/tracking";
 import { JobCard } from "./JobCard";
 import { JobDetail } from "./JobDetail";
 import { FilterBar } from "./FilterBar";
+import { DataPanel } from "./DataPanel";
 
 type LoadState =
   | { status: "loading" }
@@ -38,6 +45,28 @@ export function DashboardPage() {
     VISA_PROFILE_STORAGE_KEY,
     DEFAULT_VISA_PROFILE
   );
+  const [tracking, setTracking] = useLocalStorage<TrackingState>(
+    TRACKING_STORAGE_KEY,
+    {}
+  );
+
+  function patchTracking(jobId: string, patch: Partial<TrackingEntry>) {
+    setTracking(withEntry(tracking, jobId, patch));
+  }
+
+  function clearTracking(jobId: string) {
+    const next = { ...tracking };
+    delete next[jobId];
+    setTracking(next);
+  }
+
+  function handleImport(
+    importedProfile: VisaProfile | null,
+    importedTracking: TrackingState
+  ) {
+    if (importedProfile) setProfile(importedProfile);
+    setTracking({ ...tracking, ...importedTracking });
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -135,6 +164,11 @@ export function DashboardPage() {
           onChange={updateFilters}
           onReset={resetFilters}
         />
+        <DataPanel
+          profile={profile}
+          tracking={tracking}
+          onImport={handleImport}
+        />
         <div className="flex items-center justify-end px-3 py-2 text-xs text-muted-foreground">
           <span>Updated {new Date(state.file.generated_at).toLocaleDateString()}</span>
         </div>
@@ -150,6 +184,7 @@ export function DashboardPage() {
                   job={job}
                   result={result}
                   selected={job.job_id === selectedId}
+                  trackingStatus={tracking[job.job_id]?.status ?? null}
                   onSelect={() => select(job.job_id)}
                 />
               </li>
@@ -161,7 +196,15 @@ export function DashboardPage() {
       {/* Right pane — detail */}
       <div className="overflow-y-auto p-5">
         {selected ? (
-          <JobDetail job={selected.job} result={selected.result} />
+          <JobDetail
+            job={selected.job}
+            result={selected.result}
+            tracking={tracking[selected.job.job_id]}
+            onTrackingChange={(patch) =>
+              patchTracking(selected.job.job_id, patch)
+            }
+            onTrackingClear={() => clearTracking(selected.job.job_id)}
+          />
         ) : (
           <div className="flex h-full items-center justify-center p-8 text-center text-sm text-muted-foreground">
             <div>

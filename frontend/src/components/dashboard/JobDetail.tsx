@@ -1,11 +1,16 @@
 import type { ClassificationResult } from "@/engine";
 import type { PublicJob } from "@/lib/jobs";
+import type { TrackingEntry } from "@/lib/tracking";
 import { freshnessDisplay } from "@/lib/freshness";
 import { ResultPanel } from "@/components/ResultPanel";
+import { JobTracking } from "./JobTracking";
 
 interface Props {
   job: PublicJob;
   result: ClassificationResult;
+  tracking?: TrackingEntry;
+  onTrackingChange: (patch: Partial<TrackingEntry>) => void;
+  onTrackingClear: () => void;
 }
 
 function MetaRow({ label, value }: { label: string; value: string }) {
@@ -17,7 +22,13 @@ function MetaRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-export function JobDetail({ job, result }: Props) {
+export function JobDetail({
+  job,
+  result,
+  tracking,
+  onTrackingChange,
+  onTrackingClear,
+}: Props) {
   const fresh = freshnessDisplay(job);
   const location = job.location?.raw || job.location?.city || "Not stated";
 
@@ -43,6 +54,12 @@ export function JobDetail({ job, result }: Props) {
         phraseSignals={job.visa_signals.phrase_signals}
         descriptionText={job.description_text}
         applyUrl={job.url ?? undefined}
+      />
+
+      <JobTracking
+        entry={tracking}
+        onChange={onTrackingChange}
+        onClear={onTrackingClear}
       />
     </div>
   );

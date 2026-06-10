@@ -1,5 +1,9 @@
 import type { ClassificationResult } from "@/engine";
 import type { PublicJob } from "@/lib/jobs";
+import {
+  TRACKING_STATUS_LABEL,
+  type TrackingStatus,
+} from "@/lib/tracking";
 import { freshnessDisplay } from "@/lib/freshness";
 import { cn } from "@/lib/utils";
 import { LabelChip } from "./LabelChip";
@@ -8,6 +12,7 @@ interface Props {
   job: PublicJob;
   result: ClassificationResult;
   selected: boolean;
+  trackingStatus?: TrackingStatus | null;
   onSelect: () => void;
 }
 
@@ -22,7 +27,13 @@ function keyEvidence(job: PublicJob, result: ClassificationResult): string | nul
   return null;
 }
 
-export function JobCard({ job, result, selected, onSelect }: Props) {
+export function JobCard({
+  job,
+  result,
+  selected,
+  trackingStatus,
+  onSelect,
+}: Props) {
   const fresh = freshnessDisplay(job);
   const location = job.location?.raw || job.location?.city || "Location not stated";
   const evidence = keyEvidence(job, result);
@@ -42,7 +53,14 @@ export function JobCard({ job, result, selected, onSelect }: Props) {
     >
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-sm font-semibold leading-snug">{job.title}</h3>
-        <LabelChip label={result.label} className="shrink-0" />
+        <div className="flex shrink-0 flex-col items-end gap-1">
+          <LabelChip label={result.label} />
+          {trackingStatus && (
+            <span className="rounded-full border border-[hsl(var(--border))] bg-[hsl(var(--muted))]/40 px-1.5 py-px text-[10px] uppercase tracking-wide text-muted-foreground">
+              {TRACKING_STATUS_LABEL[trackingStatus]}
+            </span>
+          )}
+        </div>
       </div>
 
       <p className="mt-0.5 text-sm text-muted-foreground">
