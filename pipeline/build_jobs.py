@@ -265,6 +265,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="How many listings to request from APIs that support it (Reed, Adzuna).",
     )
     parser.add_argument(
+        "--min-jobs",
+        type=int,
+        default=0,
+        help=(
+            "Fail (exit 1) without writing output if fewer than this many jobs "
+            "were built. Lets scheduled refreshes keep the last good snapshot "
+            "instead of publishing an empty dataset when every source fails."
+        ),
+    )
+    parser.add_argument(
         "--stale-after-days",
         type=int,
         default=DEFAULT_STALE_AFTER_DAYS,
@@ -296,6 +306,15 @@ def main(argv: Optional[List[str]] = None) -> int:
         stale_after_days=args.stale_after_days,
         link_checker=check_url if args.check_links else None,
     )
+    if len(output["jobs"]) < args.min_jobs:
+        print(
+            f"Refusing to write {args.output}: built {len(output['jobs'])} job(s), "
+            f"below --min-jobs {args.min_jobs}. Source runs:"
+        )
+        for run in output["source_runs"]:
+            detail = run.get("error") or "ok"
+            print(f"  - {run['source']}: {run['status']} ({detail})")
+        return 1
     write_public_jobs(output, Path(args.output))
     freshness = output["freshness_summary"]
     link_note = ""

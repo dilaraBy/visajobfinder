@@ -36,10 +36,10 @@ A portfolio project that is not on GitHub with a live URL does not exist.
 - **Effort:** half a day (router base-path issues are the usual trap). **Agent:** frontend-engineer.
 
 ### A3. Scheduled daily refresh (GitHub Actions)
-- [ ] Workflow: daily cron → run `pipeline.build_jobs` with live Reed + Adzuna (keys as repo secrets) → write `frontend/public/jobs.json` → commit or upload as Pages artefact → redeploy.
-- [ ] Source failure must not break the deploy (the pipeline already isolates failures — keep it that way).
-- [ ] Show "data updated <date>" visibly in the dashboard UI.
-- **Acceptance:** dashboard shows yesterday-or-newer data without manual action for 7 consecutive days.
+- [x] Workflow: daily cron → run `pipeline.build_jobs` with live Reed + Adzuna (keys as repo secrets) → write `frontend/public/jobs.json` → commit or upload as Pages artefact → redeploy. Implemented in `.github/workflows/deploy-pages.yml`: every push + daily 06:10 UTC cron + manual dispatch rebuilds jobs.json (gated on pytest) and deploys as a Pages artefact, no bot commits.
+- [x] Source failure must not break the deploy (the pipeline already isolates failures — keep it that way). Hardened further: first CI run shipped an *empty* jobs.json when both sources 401'd (secrets had a stray CR from stdin piping — re-set via `--body`). `build_jobs` now has a `--min-jobs` guard (used with `--min-jobs 1` + `continue-on-error`), so a total source wipe-out ships the last committed snapshot instead of an empty dataset.
+- [x] Show "data updated <date>" visibly in the dashboard UI. (Already rendered from `generated_at` in `DashboardPage`.)
+- **Acceptance:** dashboard shows yesterday-or-newer data without manual action for 7 consecutive days. **Not yet claimable** — the cron started 2026-06-10; check back ~2026-06-17 and only then call A3 fully done.
 - **Effort:** half a day. **Agent:** release-engineer.
 
 ### A4. Fix the freshness dead-end

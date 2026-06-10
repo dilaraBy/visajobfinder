@@ -42,7 +42,8 @@ jobs:
             --source-adapter adzuna:live \
             --results 50 \
             --sponsor-register data/sponsor_register/sponsors.csv \
-            --output frontend/public/jobs.json
+            --output frontend/public/jobs.json \
+            --min-jobs 1
       - uses: actions/setup-node@v4
         with:
           node-version: 22

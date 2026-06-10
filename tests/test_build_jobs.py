@@ -2,7 +2,13 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from pipeline.build_jobs import adapter_from_spec, build_public_jobs, normalise_source_file, write_public_jobs
+from pipeline.build_jobs import (
+    adapter_from_spec,
+    build_public_jobs,
+    main,
+    normalise_source_file,
+    write_public_jobs,
+)
 from pipeline.sources import AdzunaAdapter, GreenhouseAdapter, ReedAdapter
 from pipeline.sources.dedupe import dedupe_jobs
 from pipeline.sources.normalise import normalise_raw_job
@@ -130,6 +136,35 @@ class BuildJobsTest(unittest.TestCase):
         self.assertEqual(fixture_adapter.fixture_path, Path(r"data\sources\greenhouse_fixture.json"))
         self.assertIsInstance(live_adapter, ReedAdapter)
         self.assertEqual(live_adapter.mode, "live")
+
+    def test_min_jobs_guard_refuses_to_write_empty_dataset(self):
+        # A total source wipe-out (e.g. all live fetches 401) must not publish
+        # an empty jobs.json over the last good snapshot.
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = Path(temp_dir) / "jobs.json"
+            exit_code = main(
+                [
+                    "--source-file", str(Path(temp_dir) / "does_not_exist.json"),
+                    "--sponsor-register", str(SPONSOR_PATH),
+                    "--output", str(output_path),
+                    "--min-jobs", "1",
+                ]
+            )
+            self.assertEqual(exit_code, 1)
+            self.assertFalse(output_path.exists())
+
+    def test_zero_jobs_still_written_without_min_jobs_guard(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = Path(temp_dir) / "jobs.json"
+            exit_code = main(
+                [
+                    "--source-file", str(Path(temp_dir) / "does_not_exist.json"),
+                    "--sponsor-register", str(SPONSOR_PATH),
+                    "--output", str(output_path),
+                ]
+            )
+            self.assertEqual(exit_code, 0)
+            self.assertTrue(output_path.exists())
 
     def test_write_public_jobs_creates_json_file(self):
         output = build_public_jobs(
