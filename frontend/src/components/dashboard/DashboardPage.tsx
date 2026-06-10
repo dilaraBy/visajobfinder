@@ -12,22 +12,24 @@ import { VisaProfileForm } from "@/components/VisaProfileForm";
 import {
   classifyPublicJob,
   loadJobs,
-  type PublicJob,
   type PublicJobsFile,
 } from "@/lib/jobs";
-import type { ClassificationResult } from "@/engine";
+import {
+  DEFAULT_FILTERS,
+  applyFilters,
+  availableSources,
+  filtersFromParams,
+  paramsWithFilters,
+  type ClassifiedJob,
+} from "@/lib/filters";
 import { JobCard } from "./JobCard";
 import { JobDetail } from "./JobDetail";
+import { FilterBar } from "./FilterBar";
 
 type LoadState =
   | { status: "loading" }
   | { status: "error"; message: string }
   | { status: "ready"; file: PublicJobsFile };
-
-interface ClassifiedJob {
-  job: PublicJob;
-  result: ClassificationResult;
-}
 
 export function DashboardPage() {
   const [state, setState] = useState<LoadState>({ status: "loading" });
@@ -64,14 +66,39 @@ export function DashboardPage() {
     }));
   }, [state, profile]);
 
+  const filters = useMemo(() => filtersFromParams(searchParams), [searchParams]);
+  const visible = useMemo(
+    () => applyFilters(classified, filters),
+    [classified, filters]
+  );
+  const sources = useMemo(() => availableSources(classified), [classified]);
+
   const selectedId = searchParams.get("job");
-  const selected =
-    classified.find((c) => c.job.job_id === selectedId) ?? null;
+  // If a selection is filtered out, drop it so the detail pane doesn't show a
+  // stale card; the user can re-select from the visible list.
+  const selected = visible.find((c) => c.job.job_id === selectedId) ?? null;
 
   function select(jobId: string) {
     const next = new URLSearchParams(searchParams);
     next.set("job", jobId);
     setSearchParams(next, { replace: true });
+  }
+
+  function updateFilters(nextFilters: typeof filters) {
+    const next = paramsWithFilters(searchParams, nextFilters);
+    // Drop the selected-job param when the filters would hide it.
+    const selId = next.get("job");
+    if (selId) {
+      const stillVisible = applyFilters(classified, nextFilters).some(
+        (c) => c.job.job_id === selId
+      );
+      if (!stillVisible) next.delete("job");
+    }
+    setSearchParams(next, { replace: true });
+  }
+
+  function resetFilters() {
+    updateFilters(DEFAULT_FILTERS);
   }
 
   if (state.status === "loading") {
@@ -100,21 +127,34 @@ export function DashboardPage() {
             onReset={resetProfile}
           />
         </div>
-        <div className="flex items-center justify-between px-3 py-2 text-xs text-muted-foreground">
-          <span>{classified.length} jobs</span>
+        <FilterBar
+          filters={filters}
+          sources={sources}
+          totalJobs={classified.length}
+          visibleJobs={visible.length}
+          onChange={updateFilters}
+          onReset={resetFilters}
+        />
+        <div className="flex items-center justify-end px-3 py-2 text-xs text-muted-foreground">
           <span>Updated {new Date(state.file.generated_at).toLocaleDateString()}</span>
         </div>
         <ul className="flex-1 space-y-2 overflow-y-auto p-3 pt-0">
-          {classified.map(({ job, result }) => (
-            <li key={job.job_id}>
-              <JobCard
-                job={job}
-                result={result}
-                selected={job.job_id === selectedId}
-                onSelect={() => select(job.job_id)}
-              />
+          {visible.length === 0 ? (
+            <li className="px-2 py-6 text-center text-xs text-muted-foreground">
+              No jobs match the current filters.
             </li>
-          ))}
+          ) : (
+            visible.map(({ job, result }) => (
+              <li key={job.job_id}>
+                <JobCard
+                  job={job}
+                  result={result}
+                  selected={job.job_id === selectedId}
+                  onSelect={() => select(job.job_id)}
+                />
+              </li>
+            ))
+          )}
         </ul>
       </div>
 

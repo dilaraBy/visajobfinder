@@ -99,7 +99,7 @@ The plan has always said this is the portfolio story. Zero interviews have happe
 Only the missing Definition-of-Done items. Nothing else.
 
 ### D1. Filters and sorting
-- [ ] Filter by label, source, location text, freshness; sort by date and label severity. Client-side, plain controls, dense layout per CLAUDE.md UI principles.
+- [x] Filter by label, source, location text, freshness; sort by date and label severity. Client-side, plain controls, dense layout per CLAUDE.md UI principles. Filter state is in `?label=&source=&loc=&fresh=&sort=` (defaults dropped) so a filtered view is shareable and survives reload. Sort defaults to label severity (`likely_blocked` first) so the user looks at the most at-risk listings before greens. `frontend/src/lib/filters.ts` + tests; wired into `DashboardPage` via the new `FilterBar`.
 - **Effort:** half a day. **Agent:** frontend-engineer.
 
 ### D2. Local tracking + export/import
