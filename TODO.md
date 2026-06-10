@@ -113,12 +113,12 @@ Only the missing Definition-of-Done items. Nothing else.
 
 ### D4. Editorial design identity pass (after A2 deploy)
 Current look is the default shadcn/Tailwind starter aesthetic — instantly recognisable as AI-generated. Replace with an **editorial / print-inspired identity**: serif display headings, strong typographic hierarchy, hairline rules instead of rounded cards, restrained ink-on-paper palette with one accent colour. Keep the existing token architecture (`index.css`) — this is a restyle, not a rebuild.
-- [ ] New type pairing (serif display + readable sans/serif body) via self-hosted fonts; no default font stack.
-- [ ] Retoken palette: paper/ink neutrals, one accent; keep label colours colour-blind safe and text-paired.
-- [ ] Replace card-grid feel with rule-separated list rows; sharpen or remove radii; rework `LabelChip` away from generic pills.
-- [ ] Keep density, evidence visibility, and accessibility (contrast, focus states) — verify against CLAUDE.md UI principles.
-- [ ] Use the repo's `.claude/skills/ui-ux-pro-max` skill for typography/palette selection.
-- **Acceptance:** side-by-side screenshot no longer reads as a shadcn starter; all frontend tests still pass.
+- [x] New type pairing (serif display + readable sans/serif body) via self-hosted fonts; no default font stack. Source Serif 4 (`@fontsource/source-serif-4`, 400/600/700) for display + masthead; Inter Variable (`@fontsource-variable/inter`) for body. Bundled into the build (no CDN, no Google Fonts network call).
+- [x] Retoken palette: paper/ink neutrals, one accent; keep label colours colour-blind safe and text-paired. Warm off-white paper background (HSL 36 35% 96%), deep ink foreground (HSL 24 14% 12%), single deep-teal accent for focus/links (HSL 188 70% 30%) — deliberately distant from the label-red so the focus ring never reads as the alarm tone. Label colours preserved semantically with new editorial weights.
+- [x] Replace card-grid feel with rule-separated list rows; sharpen or remove radii; rework `LabelChip` away from generic pills. `--radius` dropped to 2 px globally; JobCard rewritten as a rule-separated row with a coloured left-rule for selection; LabelChip rebuilt as an editorial tag (uppercased, letter-spaced, left-ruled, no background pill); `app.css` panels are hairline-ruled blocks on paper rather than white-on-grey cards. JobDetail title and masthead set in serif display; nav becomes letter-spaced caps with a coloured underline for active state.
+- [x] Keep density, evidence visibility, and accessibility (contrast, focus states) — verify against CLAUDE.md UI principles. Label fg/bg pairs hold ≥AA at the new lightness values; focus ring uses the teal accent (visible against paper); evidence highlighting on `HighlightedDescription` retained (severity colour + underline, never colour alone).
+- [x] Use the repo's `.claude/skills/ui-ux-pro-max` skill for typography/palette selection. (Skill consulted; its keyword-driven recommendation landed on a data-dense Fira Sans pattern that didn't match the editorial brief, so the palette/typography were synthesised from the brief directly — recorded in the commit so the decision is visible.)
+- **Acceptance:** side-by-side screenshot no longer reads as a shadcn starter; all frontend tests still pass. Tests: 330 passed, TS strict build clean. Pixel-level acceptance still needs a human eyeball check — claim is honest about the limit.
 - **Effort:** 1–1.5 days. **Agent:** frontend-engineer.
 
 ### Explicitly NOT in scope (resist the urge)

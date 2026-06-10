@@ -1,64 +1,94 @@
 @import "tailwindcss";
 
+/*
+ * Self-hosted typefaces (no external CDN, no Google Fonts network call):
+ *   - Source Serif 4 — transitional serif for display headings and the masthead.
+ *     Reads as editorial / print, not as a marketing landing page.
+ *   - Inter (variable) — workhorse UI sans for dense lists, forms, and body copy.
+ *
+ * Personal-data principle (CLAUDE.md): keep zero network dependencies so the
+ * dashboard stays browser-local once jobs.json + sponsors.json are fetched.
+ */
+@import "@fontsource-variable/inter";
+@import "@fontsource/source-serif-4/400.css";
+@import "@fontsource/source-serif-4/600.css";
+@import "@fontsource/source-serif-4/700.css";
+
 /* Dark mode driven by a `.dark` class on <html> (toggled in the app shell). */
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design tokens — friendly & calm: soft neutrals, generous spacing, clear type.
- * Values are HSL channels so we can compose with Tailwind's color opacity.
- * Label colours are colour-blind safe and always paired with text in the UI.
+ * Editorial / newspaper visual identity (TODO D4).
+ *
+ *   - Warm off-white paper background, deep ink foreground — newsprint mood.
+ *   - One teal accent kept far from the label-red so the focus ring and the
+ *     "Likely blocked" tone never read as the same alarm.
+ *   - Hairline 1px rules replace rounded cards; --radius is intentionally tiny.
+ *   - Label colours preserve their semantic mapping
+ *     (worth_applying / verify_first / likely_blocked / unknown) and stay
+ *     paired with text so the UI is colour-blind safe.
  */
 :root {
-  --background: 210 40% 98%;
-  --foreground: 222 30% 16%;
+  --background: 36 35% 96%;
+  --foreground: 24 14% 12%;
   --card: 0 0% 100%;
-  --card-foreground: 222 30% 16%;
-  --muted: 214 32% 95%;
-  --muted-foreground: 215 16% 42%;
-  --border: 214 25% 88%;
-  --input: 214 25% 88%;
-  --ring: 221 70% 55%;
-  --primary: 221 70% 48%;
-  --primary-foreground: 210 40% 98%;
-  --accent: 214 32% 93%;
-  --accent-foreground: 222 30% 16%;
+  --card-foreground: 24 14% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 14% 12%;
+  --muted: 36 24% 90%;
+  --muted-foreground: 30 9% 38%;
+  --border: 30 12% 74%;
+  --input: 30 14% 70%;
+  --ring: 188 70% 30%;
+  --primary: 188 70% 28%;
+  --primary-foreground: 36 35% 96%;
+  --accent: 188 50% 90%;
+  --accent-foreground: 188 70% 22%;
 
-  /* Label palette (calm, accessible). */
-  --label-worth: 152 45% 35%;
-  --label-worth-bg: 152 50% 94%;
-  --label-verify: 38 80% 38%;
-  --label-verify-bg: 42 90% 93%;
-  --label-blocked: 350 55% 45%;
-  --label-blocked-bg: 350 70% 95%;
-  --label-unknown: 215 16% 42%;
-  --label-unknown-bg: 214 25% 93%;
+  /* Label palette (semantic, AA-paired with text). */
+  --label-worth: 152 50% 26%;
+  --label-worth-bg: 152 32% 92%;
+  --label-verify: 32 80% 30%;
+  --label-verify-bg: 38 70% 91%;
+  --label-blocked: 354 65% 36%;
+  --label-blocked-bg: 354 48% 94%;
+  --label-unknown: 30 10% 30%;
+  --label-unknown-bg: 30 14% 91%;
 
-  --radius: 0.7rem;
+  /* Hairlines only — corners are barely rounded so cards read as ruled rows. */
+  --radius: 0.125rem;
+
+  /* Typography families. */
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .dark {
-  --background: 222 32% 11%;
-  --foreground: 210 30% 92%;
-  --card: 222 28% 14%;
-  --card-foreground: 210 30% 92%;
-  --muted: 217 25% 19%;
-  --muted-foreground: 215 18% 65%;
-  --border: 217 22% 24%;
-  --input: 217 22% 24%;
-  --ring: 221 70% 60%;
-  --primary: 221 75% 62%;
-  --primary-foreground: 222 32% 11%;
-  --accent: 217 25% 22%;
-  --accent-foreground: 210 30% 92%;
+  --background: 24 14% 9%;
+  --foreground: 36 25% 92%;
+  --card: 24 14% 12%;
+  --card-foreground: 36 25% 92%;
+  --popover: 24 14% 12%;
+  --popover-foreground: 36 25% 92%;
+  --muted: 24 12% 15%;
+  --muted-foreground: 30 8% 65%;
+  --border: 24 10% 24%;
+  --input: 24 12% 26%;
+  --ring: 188 60% 55%;
+  --primary: 188 60% 60%;
+  --primary-foreground: 24 14% 9%;
+  --accent: 188 30% 22%;
+  --accent-foreground: 36 25% 92%;
 
-  --label-worth: 152 45% 62%;
-  --label-worth-bg: 152 35% 18%;
-  --label-verify: 42 85% 62%;
-  --label-verify-bg: 38 45% 18%;
-  --label-blocked: 350 70% 70%;
-  --label-blocked-bg: 350 40% 20%;
-  --label-unknown: 215 18% 68%;
-  --label-unknown-bg: 217 20% 22%;
+  --label-worth: 152 45% 65%;
+  --label-worth-bg: 152 30% 16%;
+  --label-verify: 42 85% 65%;
+  --label-verify-bg: 38 40% 18%;
+  --label-blocked: 354 72% 72%;
+  --label-blocked-bg: 354 35% 20%;
+  --label-unknown: 30 10% 65%;
+  --label-unknown-bg: 24 12% 18%;
 }
 
 /* Expose tokens to Tailwind utilities (bg-background, text-foreground, ...). */
@@ -67,6 +97,8 @@
   --color-foreground: hsl(var(--foreground));
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
   --color-border: hsl(var(--border));
@@ -77,8 +109,10 @@
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
   --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 0.2rem);
-  --radius-sm: calc(var(--radius) - 0.35rem);
+  --radius-md: calc(var(--radius) - 0.05rem);
+  --radius-sm: 0;
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
 }
 
 * {
@@ -89,7 +123,14 @@ body {
   margin: 0;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11"; /* Inter: friendlier digits + uppercase L */
   -webkit-font-smoothing: antialiased;
+}
+
+/* Editorial display family for the masthead and detail-page heading. */
+.font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "lnum"; /* lining figures inside the masthead */
+  letter-spacing: -0.005em;
 }

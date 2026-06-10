@@ -44,45 +44,51 @@ export function JobCard({
       onClick={onSelect}
       aria-pressed={selected}
       className={cn(
-        "w-full rounded-lg border bg-card p-3 text-left transition-colors",
-        "hover:border-[hsl(var(--ring))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))]",
+        "group w-full border-l-[3px] py-2.5 pl-3 pr-2 text-left transition-colors",
+        "border-b border-b-[hsl(var(--border))]",
+        "hover:bg-[hsl(var(--muted))]/40 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[hsl(var(--ring))]",
         selected
-          ? "border-[hsl(var(--ring))] ring-1 ring-[hsl(var(--ring))]"
-          : "border-[hsl(var(--border))]"
+          ? "border-l-[hsl(var(--ring))] bg-[hsl(var(--muted))]/60"
+          : "border-l-transparent"
       )}
     >
-      <div className="flex items-start justify-between gap-2">
-        <h3 className="text-sm font-semibold leading-snug">{job.title}</h3>
-        <div className="flex shrink-0 flex-col items-end gap-1">
-          <LabelChip label={result.label} />
-          {trackingStatus && (
-            <span className="rounded-full border border-[hsl(var(--border))] bg-[hsl(var(--muted))]/40 px-1.5 py-px text-[10px] uppercase tracking-wide text-muted-foreground">
-              {TRACKING_STATUS_LABEL[trackingStatus]}
-            </span>
-          )}
-        </div>
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="font-display text-[15px] font-semibold leading-[1.25] text-foreground">
+          {job.title}
+        </h3>
+        <LabelChip label={result.label} className="shrink-0 pt-px" />
       </div>
 
-      <p className="mt-0.5 text-sm text-muted-foreground">
+      <p className="mt-0.5 text-[13px] text-foreground/85">
         {job.employer_raw || "Employer not stated"}
       </p>
 
-      <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+      <div className="mt-1 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-muted-foreground">
         <span>{location}</span>
-        <span aria-hidden>·</span>
-        <span className="uppercase tracking-wide">{job.source}</span>
-        <span aria-hidden>·</span>
+        <span aria-hidden className="opacity-50">·</span>
+        <span className="uppercase tracking-[0.12em]">{job.source}</span>
+        <span aria-hidden className="opacity-50">·</span>
         <span className={cn(fresh.stale && "text-[hsl(var(--label-verify))]")}>
           {fresh.text}
         </span>
+        {trackingStatus && (
+          <>
+            <span aria-hidden className="opacity-50">·</span>
+            <span className="uppercase tracking-[0.12em] text-foreground">
+              {TRACKING_STATUS_LABEL[trackingStatus]}
+            </span>
+          </>
+        )}
       </div>
 
-      <p className="mt-2 line-clamp-2 text-xs text-foreground/80">
-        {result.reason}
-      </p>
+      {result.reason && (
+        <p className="mt-1 line-clamp-2 text-[12px] text-foreground/75">
+          {result.reason}
+        </p>
+      )}
 
       {evidence && (
-        <p className="mt-1.5 line-clamp-1 text-xs italic text-muted-foreground">
+        <p className="mt-0.5 line-clamp-1 text-[12px] italic text-muted-foreground">
           {evidence}
         </p>
       )}

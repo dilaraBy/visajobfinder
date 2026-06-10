@@ -14,9 +14,10 @@ import { cn } from "@/lib/utils";
 
 function navClass({ isActive }: { isActive: boolean }) {
   return cn(
-    "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+    "px-1.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors",
+    "border-b-[2px] border-transparent",
     isActive
-      ? "bg-[hsl(var(--accent))] text-[hsl(var(--accent-foreground))]"
+      ? "border-b-[hsl(var(--ring))] text-foreground"
       : "text-muted-foreground hover:text-foreground"
   );
 }
@@ -30,15 +31,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-10 flex h-14 items-center gap-3 border-b border-[hsl(var(--border))] bg-card px-4">
-        <div className="flex items-center gap-2">
-          <span className="text-base font-semibold">VisaJobFinder</span>
-          <span className="hidden text-xs text-muted-foreground sm:inline">
-            visa-risk triage — not immigration advice
+      <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b border-[hsl(var(--border))] bg-background px-4">
+        <div className="flex items-baseline gap-3">
+          <span className="font-display text-[1.35rem] font-semibold leading-none tracking-tight">
+            VisaJobFinder
+          </span>
+          <span className="hidden text-[10px] uppercase tracking-[0.16em] text-muted-foreground sm:inline">
+            Visa-risk triage · not immigration advice
           </span>
         </div>
 
-        <nav className="ml-2 flex items-center gap-1">
+        <nav className="ml-3 flex items-center gap-4 border-l border-[hsl(var(--border))] pl-4">
           <NavLink to="/" className={navClass} end>
             Dashboard
           </NavLink>
@@ -47,9 +50,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </NavLink>
         </nav>
 
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex items-center gap-3">
           <span
-            className="hidden rounded-full bg-[hsl(var(--muted))] px-3 py-1 text-xs text-muted-foreground md:inline"
+            className="hidden border-l border-[hsl(var(--border))] pl-3 text-[10px] uppercase tracking-[0.12em] text-muted-foreground md:inline"
             title="Your visa situation (stored only in this browser)"
           >
             {VISA_SITUATION_LABELS[profile.visa_situation]}

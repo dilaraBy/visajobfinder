@@ -172,9 +172,9 @@ export function DashboardPage() {
         <div className="flex items-center justify-end px-3 py-2 text-xs text-muted-foreground">
           <span>Updated {new Date(state.file.generated_at).toLocaleDateString()}</span>
         </div>
-        <ul className="flex-1 space-y-2 overflow-y-auto p-3 pt-0">
+        <ul className="flex-1 overflow-y-auto">
           {visible.length === 0 ? (
-            <li className="px-2 py-6 text-center text-xs text-muted-foreground">
+            <li className="px-3 py-6 text-center text-xs text-muted-foreground">
               No jobs match the current filters.
             </li>
           ) : (

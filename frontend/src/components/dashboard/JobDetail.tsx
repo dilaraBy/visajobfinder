@@ -15,8 +15,10 @@ interface Props {
 
 function MetaRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex gap-2 text-sm">
-      <span className="w-24 shrink-0 text-muted-foreground">{label}</span>
+    <div className="flex gap-3 text-[13px]">
+      <span className="w-20 shrink-0 text-[10px] uppercase tracking-[0.12em] text-muted-foreground pt-1">
+        {label}
+      </span>
       <span className="text-foreground">{value}</span>
     </div>
   );
@@ -34,8 +36,10 @@ export function JobDetail({
 
   return (
     <div className="space-y-4">
-      <header className="space-y-2 border-b border-[hsl(var(--border))] pb-4">
-        <h2 className="text-lg font-semibold leading-tight">{job.title}</h2>
+      <header className="space-y-3 border-b border-[hsl(var(--border))] pb-4">
+        <h2 className="font-display text-[1.6rem] font-semibold leading-[1.15] tracking-tight text-foreground">
+          {job.title}
+        </h2>
         <div className="space-y-1">
           <MetaRow label="Employer" value={job.employer_raw || "Not stated"} />
           <MetaRow label="Location" value={location} />
