@@ -48,9 +48,16 @@ type LoadState =
 export function DashboardPage() {
   const [state, setState] = useState<LoadState>({ status: "loading" });
   const [searchParams, setSearchParams] = useSearchParams();
-  const [profile, setProfile, resetProfile] = useLocalStorage<VisaProfile>(
+  const [storedProfile, setProfile, resetProfile] = useLocalStorage<VisaProfile>(
     VISA_PROFILE_STORAGE_KEY,
     DEFAULT_VISA_PROFILE
+  );
+  // Merge over defaults so a profile saved before a new field existed (e.g. a
+  // returning visitor without target_keywords) can never crash on a missing
+  // field. Memoised so identity only changes when the stored value changes.
+  const profile = useMemo<VisaProfile>(
+    () => ({ ...DEFAULT_VISA_PROFILE, ...storedProfile }),
+    [storedProfile]
   );
   const [tracking, setTracking] = useLocalStorage<TrackingState>(
     TRACKING_STORAGE_KEY,
