@@ -24,7 +24,7 @@ export function matcherFromFile(file: SponsorRegisterFile): SponsorMatcher {
  * privacy guarantee: the engine must never be pointed at a remote register.
  */
 export async function loadSponsorMatcher(
-  url = "/sponsors.json"
+  url = `${import.meta.env.BASE_URL}sponsors.json`
 ): Promise<SponsorMatcher> {
   if (!url.startsWith("/")) {
     throw new Error(

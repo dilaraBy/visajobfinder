@@ -52,7 +52,7 @@ export function CheckPage() {
   // Load the sponsor register once on mount.
   useEffect(() => {
     let cancelled = false;
-    fetch("/sponsors.json")
+    fetch(`${import.meta.env.BASE_URL}sponsors.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json() as Promise<SponsorRegisterFile>;

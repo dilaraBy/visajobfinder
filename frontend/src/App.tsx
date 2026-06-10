@@ -16,7 +16,9 @@ import { CheckPage } from "@/components/CheckPage";
 
 export function App() {
   return (
-    <BrowserRouter>
+    // BASE_URL is "/" in dev and the configured base (e.g. "/visajobfinder/")
+    // in deployed builds; the router needs it without the trailing slash.
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
       <AppShell>
         <Routes>
           <Route path="/" element={<DashboardPage />} />

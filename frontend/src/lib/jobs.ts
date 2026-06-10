@@ -76,7 +76,9 @@ export interface PublicJobsFile {
 const EMPTY_MATCHER = new SponsorMatcher([]);
 
 /** Load the static jobs file. Only a local, same-origin path is accepted. */
-export async function loadJobs(url = "/jobs.json"): Promise<PublicJobsFile> {
+export async function loadJobs(
+  url = `${import.meta.env.BASE_URL}jobs.json`
+): Promise<PublicJobsFile> {
   if (!url.startsWith("/")) {
     throw new Error(`loadJobs only accepts a local, same-origin path; got: ${url}`);
   }
