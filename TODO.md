@@ -44,10 +44,10 @@ A portfolio project that is not on GitHub with a live URL does not exist.
 
 ### A4. Fix the freshness dead-end
 Current live data: 49 Reed jobs, **all** `missing_date`, so the freshness feature displays nothing.
-- [ ] Check the Reed adapter's date field mapping (Reed returns `date` as posted date — verify parsing).
-- [ ] Add Adzuna live to the default build (it provides `created` timestamps).
-- [ ] If a source genuinely lacks dates, show "date unknown" honestly rather than an empty freshness block.
-- **Acceptance:** majority of dashboard jobs show real age; `freshness_summary.missing_date` is a minority.
+- [x] Check the Reed adapter's date field mapping (Reed returns `date` as posted date — verify parsing). Root cause: Reed returns `DD/MM/YYYY`, the adapter passed it through unconverted and freshness only parses ISO. Fixed with `_iso_date()` (ISO + UK day-first, junk → None); Reed fixture now mirrors the real API format so the suite catches format regressions.
+- [x] Add Adzuna live to the default build (it provides `created` timestamps). Also fixed: `where="United Kingdom"` failed Adzuna geocoding and silently returned 0 results — country-wide search now omits `where`.
+- [x] If a source genuinely lacks dates, show "date unknown" honestly rather than an empty freshness block. (Frontend already did this; unparseable dates now become `null` at the adapter instead of junk text.)
+- **Acceptance:** majority of dashboard jobs show real age; `freshness_summary.missing_date` is a minority. **Measured 2026-06-10:** 94 live jobs (Reed 50 + Adzuna 50, deduped) → 59 fresh, 35 stale, 0 missing_date.
 - **Effort:** 2–4 hours. **Agent:** pipeline-engineer.
 
 ---

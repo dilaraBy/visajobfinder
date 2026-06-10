@@ -4,6 +4,7 @@ import unittest
 from pipeline.build_jobs import build_public_jobs
 from pipeline.classifier.models import JobInput
 from pipeline.sources import AdzunaAdapter, GreenhouseAdapter, LeverAdapter, ReedAdapter, SourceAdapter
+from pipeline.sources.adapters import _iso_date
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,6 +14,28 @@ SPONSOR_PATH = ROOT / "data" / "sponsor_register" / "sample_sponsors.csv"
 
 def _fetch(adapter: SourceAdapter):
     return adapter.fetch_jobs("2026-06-04T09:00:00Z")
+
+
+class IsoDateTest(unittest.TestCase):
+    def test_iso_date_passes_through(self):
+        self.assertEqual(_iso_date("2026-06-03"), "2026-06-03")
+
+    def test_iso_timestamp_is_truncated(self):
+        self.assertEqual(_iso_date("2026-06-04T08:00:00Z"), "2026-06-04")
+
+    def test_uk_day_first_format_is_converted(self):
+        self.assertEqual(_iso_date("04/06/2026"), "2026-06-04")
+
+    def test_invalid_uk_date_becomes_none(self):
+        self.assertIsNone(_iso_date("31/02/2026"))
+
+    def test_invalid_iso_date_becomes_none(self):
+        self.assertIsNone(_iso_date("2026-13-40"))
+
+    def test_unparseable_text_becomes_none(self):
+        self.assertIsNone(_iso_date("yesterday"))
+        self.assertIsNone(_iso_date(""))
+        self.assertIsNone(_iso_date(None))
 
 
 class SourceAdapterTest(unittest.TestCase):
@@ -28,6 +51,10 @@ class SourceAdapterTest(unittest.TestCase):
         self.assertEqual(jobs[0].salary_min, 33000)
         self.assertNotIn("<p>", jobs[0].description_text)
         self.assertIn("Visa sponsorship may be available", jobs[0].description_text)
+        # The live Reed API returns DD/MM/YYYY; the fixture mirrors that shape
+        # so a format regression cannot pass the suite silently again.
+        self.assertEqual(jobs[0].posted_at, "2026-06-04")
+        self.assertEqual(jobs[0].closing_at, "2026-07-04")
 
     def test_adzuna_fixture_normalises_to_job_input(self):
         jobs, run = _fetch(AdzunaAdapter(fixture_path=DATA_SOURCES / "adzuna_fixture.json"))

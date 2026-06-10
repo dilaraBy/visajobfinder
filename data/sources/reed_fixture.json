@@ -8,8 +8,8 @@
       "locationName": "London",
       "minimumSalary": 33000,
       "maximumSalary": 36000,
-      "date": "2026-06-04T08:00:00Z",
-      "expirationDate": "2026-07-04",
+      "date": "04/06/2026",
+      "expirationDate": "04/07/2026",
       "jobUrl": "https://reed.example.test/jobs/10001"
     }
   ]

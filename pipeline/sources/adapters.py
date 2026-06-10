@@ -10,7 +10,7 @@ import re
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Tuple
 
@@ -50,9 +50,33 @@ def _first_text(*values: Any) -> str:
     return ""
 
 
-def _date_prefix(value: Any) -> Optional[str]:
+ISO_DATE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})")
+UK_DATE_RE = re.compile(r"^\d{2}/\d{2}/\d{4}")
+
+
+def _iso_date(value: Any) -> Optional[str]:
+    """Normalise a source date to YYYY-MM-DD, or None when unparseable.
+
+    The live Reed API returns day-first DD/MM/YYYY dates; other sources use
+    ISO timestamps. Anything else becomes None so downstream freshness reports
+    "date unknown" honestly instead of carrying unparseable text through.
+    """
     text = _clean_text(value)
-    return text[:10] if text else None
+    if not text:
+        return None
+    iso = ISO_DATE_RE.match(text)
+    if iso:
+        try:
+            date.fromisoformat(iso.group(1))
+        except ValueError:
+            return None
+        return iso.group(1)
+    if UK_DATE_RE.match(text):
+        try:
+            return datetime.strptime(text[:10], "%d/%m/%Y").date().isoformat()
+        except ValueError:
+            return None
+    return None
 
 
 def _date_from_epoch_ms(value: Any) -> Optional[str]:
@@ -61,7 +85,7 @@ def _date_from_epoch_ms(value: Any) -> Optional[str]:
     try:
         timestamp = int(value) / 1000
     except (TypeError, ValueError):
-        return _date_prefix(value)
+        return _iso_date(value)
     return datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat()
 
 
@@ -221,8 +245,8 @@ class ReedAdapter:
             "salary_text": _salary_text(minimum, maximum, record.get("salary")),
             "salary_min": minimum,
             "salary_max": maximum,
-            "posted_at": _date_prefix(record.get("date") or record.get("datePosted") or record.get("posted_at")),
-            "closing_at": _date_prefix(record.get("expirationDate") or record.get("closing_at")),
+            "posted_at": _iso_date(record.get("date") or record.get("datePosted") or record.get("posted_at")),
+            "closing_at": _iso_date(record.get("expirationDate") or record.get("closing_at")),
             "url": _first_text(record.get("jobUrl"), record.get("externalUrl"), record.get("url")),
         }
 
@@ -235,7 +259,10 @@ class AdzunaAdapter:
     env: Mapping[str, str] = field(default_factory=lambda: os.environ)
     country: str = "gb"
     what: str = "graduate"
-    where: str = "United Kingdom"
+    # Country-wide search comes from the /jobs/{country}/ URL path. A `where`
+    # of "United Kingdom" fails Adzuna's geocoding and silently returns zero
+    # results, so only pass `where` for a real place name (city/region).
+    where: str = ""
     results_per_page: int = 25
 
     def fetch_jobs(self, fetched_at: str) -> Tuple[List[JobInput], SourceRun]:
@@ -260,15 +287,15 @@ class AdzunaAdapter:
         if missing:
             return _missing_env_error(self.source, missing)
 
-        query = urllib.parse.urlencode(
-            {
-                "app_id": app_id,
-                "app_key": app_key,
-                "what": self.what,
-                "where": self.where,
-                "results_per_page": self.results_per_page,
-            }
-        )
+        params = {
+            "app_id": app_id,
+            "app_key": app_key,
+            "what": self.what,
+            "results_per_page": self.results_per_page,
+        }
+        if _clean_text(self.where):
+            params["where"] = _clean_text(self.where)
+        query = urllib.parse.urlencode(params)
         try:
             payload = _fetch_json(f"https://api.adzuna.com/v1/api/jobs/{self.country}/search/1?{query}")
             records = _records_from_payload(payload, ("results",))
@@ -293,8 +320,8 @@ class AdzunaAdapter:
             "salary_text": _salary_text(minimum, maximum, record.get("salary_text")),
             "salary_min": minimum,
             "salary_max": maximum,
-            "posted_at": _date_prefix(record.get("created")),
-            "closing_at": _date_prefix(record.get("closing_at")),
+            "posted_at": _iso_date(record.get("created")),
+            "closing_at": _iso_date(record.get("closing_at")),
             "url": _first_text(record.get("redirect_url"), record.get("adref"), record.get("url")),
         }
 
@@ -326,8 +353,8 @@ class GreenhouseAdapter:
             "description_text": _excerpt(_first_text(record.get("content"), record.get("description"))),
             "location": _first_text(location.get("name"), record.get("location")),
             "salary_text": _first_text(record.get("salary_text")) or None,
-            "posted_at": _date_prefix(record.get("updated_at") or record.get("created_at")),
-            "closing_at": _date_prefix(record.get("closing_at")),
+            "posted_at": _iso_date(record.get("updated_at") or record.get("created_at")),
+            "closing_at": _iso_date(record.get("closing_at")),
             "url": _first_text(record.get("absolute_url"), record.get("url")),
         }
 
@@ -368,6 +395,6 @@ class LeverAdapter:
             "location": _first_text(categories.get("location"), record.get("location")),
             "salary_text": _first_text(record.get("salaryDescription"), record.get("salary_text")) or None,
             "posted_at": _date_from_epoch_ms(record.get("createdAt") or record.get("created_at")),
-            "closing_at": _date_prefix(record.get("closing_at")),
+            "closing_at": _iso_date(record.get("closing_at")),
             "url": _first_text(record.get("hostedUrl"), record.get("applyUrl"), record.get("url")),
         }

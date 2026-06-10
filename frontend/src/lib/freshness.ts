@@ -8,9 +8,9 @@ export interface FreshnessDisplay {
 }
 
 /**
- * Honest freshness label. Some sources (e.g. Reed's DD/MM/YYYY) aren't parsed
- * into an age by the pipeline, so we show the raw posted date but clearly mark
- * it as unverified rather than implying we confirmed its recency.
+ * Honest freshness label. If a listing has no machine-verified age (source
+ * gave no parseable posted date), show the raw date marked as unverified —
+ * or "No posting date" — rather than implying we confirmed its recency.
  */
 export function freshnessDisplay(job: PublicJob): FreshnessDisplay {
   const f: PublicJobFreshness | null = job.freshness;
