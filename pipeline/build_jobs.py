@@ -15,6 +15,7 @@ from pipeline.sources import AdzunaAdapter, GreenhouseAdapter, LeverAdapter, Ree
 from pipeline.sources.env_file import load_env_file
 from pipeline.sources.freshness import (
     DEFAULT_STALE_AFTER_DAYS,
+    compute_age_days,
     freshness_for,
     summarise_freshness,
 )
@@ -37,6 +38,32 @@ ADAPTERS = {
     "greenhouse": GreenhouseAdapter,
     "lever": LeverAdapter,
 }
+# Sources whose live search keyword can be set per run.
+SEARCH_TERM_SOURCES = {"reed", "adzuna"}
+# Curated UK graduate-relevant fields fetched daily when --search-term is not
+# given. Ordered specific -> generic so a field-specific category wins the
+# first-wins dedupe (the generic "graduate" sweep is last).
+DEFAULT_SEARCH_TERMS = [
+    "psychology graduate",
+    "economics graduate",
+    "finance graduate",
+    "data analyst graduate",
+    "marketing graduate",
+    "engineering graduate",
+    "software developer graduate",
+    "business analyst graduate",
+    "human resources graduate",
+    "graduate",
+]
+# Per (term x source) request size and the overall cap on jobs written, so a
+# many-term run stays polite upstream and keeps jobs.json a reasonable static
+# asset (~3 KB/job).
+DEFAULT_PER_TERM_RESULTS = 20
+DEFAULT_MAX_JOBS = 400
+# Drop listings whose posted date is older than this; sources sometimes return
+# stale ads (months/years old) that aren't worth showing. Undated jobs are kept
+# (their age can't be judged) and stay flagged as needs_review.
+DEFAULT_MAX_AGE_DAYS = 120
 
 
 def utc_now() -> str:
@@ -103,7 +130,11 @@ def normalise_source_file(path: Path, fetched_at: str) -> Tuple[List[Any], Sourc
     )
 
 
-def adapter_from_spec(spec: str, results: Optional[int] = None) -> SourceAdapter:
+def adapter_from_spec(
+    spec: str,
+    results: Optional[int] = None,
+    search_term: Optional[str] = None,
+) -> SourceAdapter:
     """Create a source adapter from a compact CLI spec.
 
     Supported forms:
@@ -112,7 +143,9 @@ def adapter_from_spec(spec: str, results: Optional[int] = None) -> SourceAdapter
     - ``greenhouse:fixture:path/to/file.json`` uses a specific fixture.
 
     ``results`` sets how many listings to request from APIs that support it
-    (Reed, Adzuna), capped to a polite per-source maximum.
+    (Reed, Adzuna), capped to a polite per-source maximum. ``search_term`` sets
+    the keyword those same sources search for (ignored by sources that do not
+    support a search term).
     """
 
     parts = spec.split(":", 2)
@@ -132,6 +165,11 @@ def adapter_from_spec(spec: str, results: Optional[int] = None) -> SourceAdapter
             kwargs["results_to_take"] = capped
         elif source == "adzuna":
             kwargs["results_per_page"] = capped
+    if search_term is not None and source in SEARCH_TERM_SOURCES:
+        if source == "reed":
+            kwargs["keywords"] = search_term
+        elif source == "adzuna":
+            kwargs["what"] = search_term
     return adapter_cls(**kwargs)
 
 
@@ -144,8 +182,23 @@ def fetch_adapters(
     for adapter in adapters:
         adapter_jobs, source_run = adapter.fetch_jobs(fetched_at)
         jobs.extend(adapter_jobs)
-        source_runs.append(source_run.to_dict())
+        run_dict = source_run.to_dict()
+        # Surface which search term this run fetched so multi-term failures are
+        # legible in source_runs. Adapters don't know their own term, so read it
+        # off the adapter (reed: keywords, adzuna: what).
+        term = getattr(adapter, "keywords", None) or getattr(adapter, "what", None)
+        if term and run_dict.get("search_term") is None:
+            run_dict["search_term"] = term
+        source_runs.append(run_dict)
     return jobs, source_runs
+
+
+def _within_max_age(posted_at: Any, generated_at: str, max_age_days: int) -> bool:
+    """True if a listing is recent enough to keep. Undated jobs are kept."""
+    age = compute_age_days(posted_at, generated_at)
+    if age is None:
+        return True
+    return age <= max_age_days
 
 
 def enrich_jobs(
@@ -182,6 +235,8 @@ def build_public_jobs(
     adapters: Optional[Iterable[SourceAdapter]] = None,
     stale_after_days: int = DEFAULT_STALE_AFTER_DAYS,
     link_checker: Optional[LinkChecker] = None,
+    max_jobs: Optional[int] = None,
+    max_age_days: Optional[int] = None,
 ) -> Dict[str, Any]:
     timestamp = generated_at or utc_now()
     matcher = SponsorMatcher.from_csv(sponsor_register_path)
@@ -199,6 +254,18 @@ def build_public_jobs(
         source_runs.append(source_run.to_dict())
 
     deduped_jobs = dedupe_jobs(all_jobs)
+    if max_age_days is not None:
+        # Drop listings older than the cutoff (keep undated ones — their age is
+        # unknown and they're flagged separately as needs_review).
+        deduped_jobs = [
+            job
+            for job in deduped_jobs
+            if _within_max_age(job.posted_at, timestamp, max_age_days)
+        ]
+    if max_jobs is not None:
+        # Cap after dedupe (and before the --min-jobs guard counts them) so a
+        # many-term run keeps jobs.json a reasonable size.
+        deduped_jobs = deduped_jobs[:max_jobs]
     job_records = enrich_jobs(
         deduped_jobs,
         matcher,
@@ -262,7 +329,37 @@ def build_parser() -> argparse.ArgumentParser:
         "--results",
         type=int,
         default=None,
-        help="How many listings to request from APIs that support it (Reed, Adzuna).",
+        help=(
+            "How many listings to request per (search term x source) from APIs "
+            "that support it (Reed, Adzuna). Defaults to "
+            f"{DEFAULT_PER_TERM_RESULTS}."
+        ),
+    )
+    parser.add_argument(
+        "--search-term",
+        action="append",
+        default=None,
+        help=(
+            "Field/keyword to fetch from live Reed/Adzuna (repeatable). Each term "
+            "is fetched separately and tagged onto its jobs as `category`. "
+            "Defaults to a curated UK graduate-field list when omitted."
+        ),
+    )
+    parser.add_argument(
+        "--max-jobs",
+        type=int,
+        default=DEFAULT_MAX_JOBS,
+        help="Cap on total jobs written after dedupe across all search terms.",
+    )
+    parser.add_argument(
+        "--max-age-days",
+        type=int,
+        default=DEFAULT_MAX_AGE_DAYS,
+        help=(
+            "Drop listings whose posted date is older than this many days "
+            f"(default {DEFAULT_MAX_AGE_DAYS}). Undated listings are kept. "
+            "Pass a large number to disable."
+        ),
     )
     parser.add_argument(
         "--min-jobs",
@@ -293,10 +390,20 @@ def main(argv: Optional[List[str]] = None) -> int:
     # Load local credentials before constructing live adapters; existing env wins.
     load_env_file(Path(args.env_file))
     source_files = [Path(path) for path in (args.source_file or [])]
-    adapters = [
-        adapter_from_spec(spec, results=args.results)
-        for spec in (args.source_adapter or [])
-    ]
+    search_terms = args.search_term or list(DEFAULT_SEARCH_TERMS)
+    per_term_results = args.results if args.results is not None else DEFAULT_PER_TERM_RESULTS
+    # Fan out (search term x spec) for term-aware sources; other sources stay a
+    # single instance so we don't reload the same fixture once per term.
+    adapters = []
+    for spec in (args.source_adapter or []):
+        source = spec.split(":", 2)[0].strip().lower()
+        if source in SEARCH_TERM_SOURCES:
+            for term in search_terms:
+                adapters.append(
+                    adapter_from_spec(spec, results=per_term_results, search_term=term)
+                )
+        else:
+            adapters.append(adapter_from_spec(spec, results=per_term_results))
     if not source_files and not adapters:
         source_files = [DEFAULT_SOURCE_FILE]
     output = build_public_jobs(
@@ -305,6 +412,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         adapters=adapters,
         stale_after_days=args.stale_after_days,
         link_checker=check_url if args.check_links else None,
+        max_jobs=args.max_jobs,
+        max_age_days=args.max_age_days,
     )
     if len(output["jobs"]) < args.min_jobs:
         print(

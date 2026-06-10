@@ -9,6 +9,7 @@ import {
   type FilterState,
   type FreshnessFilter,
   type LabelFilter,
+  type PostedWithinFilter,
   type SortKey,
 } from "@/lib/filters";
 
@@ -44,7 +45,9 @@ export function FilterBar({
     filters.source !== DEFAULT_FILTERS.source ||
     filters.location !== DEFAULT_FILTERS.location ||
     filters.freshness !== DEFAULT_FILTERS.freshness ||
-    filters.sort !== DEFAULT_FILTERS.sort;
+    filters.posted_within !== DEFAULT_FILTERS.posted_within ||
+    filters.sort !== DEFAULT_FILTERS.sort ||
+    filters.keyword !== DEFAULT_FILTERS.keyword;
 
   return (
     <div className="space-y-2 border-b border-[hsl(var(--border))] px-3 py-2">
@@ -96,6 +99,23 @@ export function FilterBar({
             <option value="fresh">Within stale threshold</option>
             <option value="stale">Stale</option>
             <option value="missing_date">No posting date</option>
+          </select>
+        </label>
+
+        <label className="flex flex-col gap-1 text-[10px] uppercase tracking-wide text-[hsl(var(--muted-foreground))]">
+          Posted within
+          <select
+            className={SELECT_CLASS}
+            value={filters.posted_within}
+            onChange={(e) =>
+              patch("posted_within", e.target.value as PostedWithinFilter)
+            }
+            aria-label="Filter by how recently the job was posted"
+          >
+            <option value="all">Any time</option>
+            <option value="30">Past month</option>
+            <option value="90">Past 3 months</option>
+            <option value="180">Past 6 months</option>
           </select>
         </label>
 

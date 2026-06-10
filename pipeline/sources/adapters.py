@@ -248,6 +248,7 @@ class ReedAdapter:
             "posted_at": _iso_date(record.get("date") or record.get("datePosted") or record.get("posted_at")),
             "closing_at": _iso_date(record.get("expirationDate") or record.get("closing_at")),
             "url": _first_text(record.get("jobUrl"), record.get("externalUrl"), record.get("url")),
+            "category": self.keywords,
         }
 
 
@@ -323,6 +324,7 @@ class AdzunaAdapter:
             "posted_at": _iso_date(record.get("created")),
             "closing_at": _iso_date(record.get("closing_at")),
             "url": _first_text(record.get("redirect_url"), record.get("adref"), record.get("url")),
+            "category": self.what,
         }
 
 

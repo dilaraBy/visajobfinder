@@ -1,8 +1,10 @@
 from pathlib import Path
+import json
 import tempfile
 import unittest
 
 from pipeline.build_jobs import (
+    _within_max_age,
     adapter_from_spec,
     build_public_jobs,
     main,
@@ -136,6 +138,127 @@ class BuildJobsTest(unittest.TestCase):
         self.assertEqual(fixture_adapter.fixture_path, Path(r"data\sources\greenhouse_fixture.json"))
         self.assertIsInstance(live_adapter, ReedAdapter)
         self.assertEqual(live_adapter.mode, "live")
+
+    def test_adapter_from_spec_injects_search_term(self):
+        reed = adapter_from_spec("reed:live", search_term="economics graduate")
+        adzuna = adapter_from_spec("adzuna:live", search_term="economics graduate")
+
+        self.assertEqual(reed.keywords, "economics graduate")
+        self.assertEqual(adzuna.what, "economics graduate")
+
+    def test_build_public_jobs_emits_category_from_adapter(self):
+        output = build_public_jobs(
+            source_files=[],
+            sponsor_register_path=SPONSOR_PATH,
+            generated_at="2026-06-04T09:00:00Z",
+            adapters=[
+                ReedAdapter(
+                    fixture_path=ROOT / "data" / "sources" / "reed_fixture.json",
+                    keywords="psychology graduate",
+                )
+            ],
+        )
+
+        self.assertEqual(output["jobs"][0]["category"], "psychology graduate")
+
+    def test_source_file_jobs_have_null_category(self):
+        output = build_public_jobs(
+            source_files=[SOURCE_PATH],
+            sponsor_register_path=SPONSOR_PATH,
+            generated_at="2026-06-04T09:00:00Z",
+        )
+
+        self.assertTrue(all(job["category"] is None for job in output["jobs"]))
+
+    def test_multi_term_dedupe_keeps_first_term_category(self):
+        reed_fixture = ROOT / "data" / "sources" / "reed_fixture.json"
+        output = build_public_jobs(
+            source_files=[],
+            sponsor_register_path=SPONSOR_PATH,
+            generated_at="2026-06-04T09:00:00Z",
+            adapters=[
+                ReedAdapter(fixture_path=reed_fixture, keywords="psychology graduate"),
+                ReedAdapter(fixture_path=reed_fixture, keywords="graduate"),
+            ],
+        )
+
+        # Same fixture fetched under two terms collapses to one job; the
+        # first (specific) term wins, matching the specific->generic ordering.
+        self.assertEqual(len(output["jobs"]), 1)
+        self.assertEqual(output["jobs"][0]["category"], "psychology graduate")
+        self.assertEqual(len(output["source_runs"]), 2)
+        self.assertEqual(output["source_runs"][0]["search_term"], "psychology graduate")
+        self.assertEqual(output["source_runs"][1]["search_term"], "graduate")
+
+    def test_within_max_age_keeps_recent_and_undated(self):
+        gen = "2026-06-10T00:00:00Z"
+        self.assertTrue(_within_max_age("2026-06-01", gen, 120))  # 9 days old
+        self.assertFalse(_within_max_age("2023-01-01", gen, 120))  # years old
+        self.assertTrue(_within_max_age(None, gen, 120))  # undated kept
+
+    def test_build_public_jobs_drops_listings_older_than_max_age(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            source = Path(temp_dir) / "aged.json"
+            source.write_text(
+                json.dumps(
+                    [
+                        {
+                            "source": "sample",
+                            "source_job_id": "recent",
+                            "title": "Recent Graduate Analyst",
+                            "employer_raw": "Example Ltd",
+                            "description_text": "Visa sponsorship available.",
+                            "posted_at": "2026-06-01",
+                        },
+                        {
+                            "source": "sample",
+                            "source_job_id": "ancient",
+                            "title": "Ancient Graduate Analyst",
+                            "employer_raw": "Example Ltd",
+                            "description_text": "Visa sponsorship available.",
+                            "posted_at": "2023-01-01",
+                        },
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            output = build_public_jobs(
+                source_files=[source],
+                sponsor_register_path=SPONSOR_PATH,
+                generated_at="2026-06-10T09:00:00Z",
+                max_age_days=120,
+            )
+
+        ids = [job["source_job_id"] for job in output["jobs"]]
+        self.assertEqual(ids, ["recent"])
+
+    def test_max_jobs_caps_output(self):
+        output = build_public_jobs(
+            source_files=[SOURCE_PATH],
+            sponsor_register_path=SPONSOR_PATH,
+            generated_at="2026-06-04T09:00:00Z",
+            max_jobs=1,
+        )
+
+        self.assertEqual(len(output["jobs"]), 1)
+
+    def test_main_fans_out_multiple_search_terms(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = Path(temp_dir) / "jobs.json"
+            exit_code = main(
+                [
+                    "--source-adapter", "reed:fixture",
+                    "--search-term", "psychology graduate",
+                    "--search-term", "graduate",
+                    "--sponsor-register", str(SPONSOR_PATH),
+                    "--output", str(output_path),
+                ]
+            )
+            self.assertEqual(exit_code, 0)
+            data = json.loads(output_path.read_text(encoding="utf-8"))
+            # One reed:fixture adapter per term => two source runs.
+            self.assertEqual(len(data["source_runs"]), 2)
+            self.assertEqual(data["jobs"][0]["category"], "psychology graduate")
 
     def test_min_jobs_guard_refuses_to_write_empty_dataset(self):
         # A total source wipe-out (e.g. all live fetches 401) must not publish

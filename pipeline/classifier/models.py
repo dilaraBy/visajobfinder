@@ -32,6 +32,9 @@ class JobInput:
     closing_at: Optional[str] = None
     fetched_at: Optional[str] = None
     url: Optional[str] = None
+    # Originating search term that surfaced this job (display/filter metadata
+    # only; never read by the classifier). None for fixtures and pasted jobs.
+    category: Optional[str] = None
 
 
 @dataclass(frozen=True)

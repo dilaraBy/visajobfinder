@@ -517,6 +517,7 @@ def build_job_record(
         "job_id": job.job_id,
         "source": job.source,
         "source_job_id": job.source_job_id,
+        "category": job.category,
         "title": job.title,
         "employer_raw": job.employer_raw,
         "description_text": job.description_text,

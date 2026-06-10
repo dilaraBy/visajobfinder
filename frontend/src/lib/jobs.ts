@@ -48,6 +48,9 @@ export interface PublicJob {
   job_id: string;
   source: string;
   source_job_id?: string | null;
+  /** Originating search term the pipeline tagged this job with (display/filter
+   * metadata only). Optional for backward compatibility with older files. */
+  category?: string | null;
   title: string;
   employer_raw: string;
   description_text: string;

@@ -15,6 +15,9 @@ class SourceRun:
     fetched_count: int
     normalised_count: int
     error: Optional[str] = None
+    # Search term this run fetched (multi-term live runs); None for single-term
+    # sources and file sources.
+    search_term: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)

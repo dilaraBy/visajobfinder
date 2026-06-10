@@ -10,6 +10,9 @@ export interface VisaProfile {
   needs_future_sponsorship: boolean;
   visa_expiry_month: string;
   target_start_month: string;
+  /** Saved job-interest keywords/fields. Used only for display filtering and
+   * ranking — never fed into classification (see userContextFromProfile). */
+  target_keywords: string[];
 }
 
 export const DEFAULT_VISA_PROFILE: VisaProfile = {
@@ -18,6 +21,7 @@ export const DEFAULT_VISA_PROFILE: VisaProfile = {
   needs_future_sponsorship: false,
   visa_expiry_month: "",
   target_start_month: "",
+  target_keywords: [],
 };
 
 export const VISA_PROFILE_STORAGE_KEY = "vjf_visa_profile_v1";
@@ -31,6 +35,9 @@ export const VISA_SITUATION_LABELS: Record<VisaSituation, string> = {
 /** Map the browser-local profile to the engine's UserContext (single source of
  * truth so the dashboard and paste checker classify identically). */
 export function userContextFromProfile(profile: VisaProfile): UserContext {
+  // NOTE: target_keywords is deliberately NOT mapped here. Job interests must
+  // never influence visa classification (engine parity); they only filter/rank
+  // the displayed list.
   return {
     visa_situation: profile.visa_situation,
     visa_expiry_month: profile.visa_expiry_month || null,

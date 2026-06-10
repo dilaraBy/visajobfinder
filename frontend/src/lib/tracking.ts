@@ -123,6 +123,9 @@ function sanitiseProfile(raw: unknown): VisaProfile | null {
       typeof obj.visa_expiry_month === "string" ? obj.visa_expiry_month : "",
     target_start_month:
       typeof obj.target_start_month === "string" ? obj.target_start_month : "",
+    target_keywords: Array.isArray(obj.target_keywords)
+      ? obj.target_keywords.filter((k): k is string => typeof k === "string")
+      : [],
   };
 }
 

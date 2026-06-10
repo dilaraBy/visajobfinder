@@ -97,6 +97,7 @@ def normalise_raw_job(raw: Dict[str, Any], fetched_at: str) -> JobInput:
         closing_at=_optional_text(raw.get("closing_at")),
         fetched_at=fetched_at,
         url=_optional_text(raw.get("url")),
+        category=_optional_text(raw.get("category") or raw.get("query")),
     )
 
 

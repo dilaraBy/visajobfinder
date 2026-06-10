@@ -40,7 +40,9 @@ jobs:
           python -m pipeline.build_jobs \
             --source-adapter reed:live \
             --source-adapter adzuna:live \
-            --results 50 \
+            --results 20 \
+            --max-jobs 400 \
+            --max-age-days 120 \
             --sponsor-register data/sponsor_register/sponsors.csv \
             --output frontend/public/jobs.json \
             --min-jobs 1

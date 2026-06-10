@@ -95,6 +95,34 @@ class SourceAdapterTest(unittest.TestCase):
         self.assertEqual(jobs[0].posted_at, "2026-06-02")
         self.assertIn("cannot provide visa sponsorship", jobs[0].description_text)
 
+    def test_reed_adapter_tags_category_from_keyword(self):
+        jobs, _ = _fetch(
+            ReedAdapter(
+                fixture_path=DATA_SOURCES / "reed_fixture.json",
+                keywords="psychology graduate",
+            )
+        )
+        self.assertEqual(jobs[0].category, "psychology graduate")
+
+    def test_adzuna_adapter_tags_category_from_what(self):
+        jobs, _ = _fetch(
+            AdzunaAdapter(
+                fixture_path=DATA_SOURCES / "adzuna_fixture.json",
+                what="finance graduate",
+            )
+        )
+        self.assertEqual(jobs[0].category, "finance graduate")
+
+    def test_board_fixtures_have_null_category(self):
+        gh_jobs, _ = _fetch(
+            GreenhouseAdapter(fixture_path=DATA_SOURCES / "greenhouse_fixture.json")
+        )
+        lever_jobs, _ = _fetch(
+            LeverAdapter(fixture_path=DATA_SOURCES / "lever_fixture.json")
+        )
+        self.assertIsNone(gh_jobs[0].category)
+        self.assertIsNone(lever_jobs[0].category)
+
     def test_reed_live_mode_reports_missing_credentials_as_source_run_error(self):
         jobs, run = ReedAdapter(mode="live", env={}).fetch_jobs("2026-06-04T09:00:00Z")
 

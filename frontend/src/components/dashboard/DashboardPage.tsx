@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Menu } from "lucide-react";
 
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import {
@@ -8,7 +9,6 @@ import {
   userContextFromProfile,
   type VisaProfile,
 } from "@/visaProfile";
-import { VisaProfileForm } from "@/components/VisaProfileForm";
 import {
   classifyPublicJob,
   loadJobs,
@@ -17,10 +17,14 @@ import {
 import {
   DEFAULT_FILTERS,
   applyFilters,
+  availableCategories,
   availableSources,
   filtersFromParams,
   paramsWithFilters,
+  parseKeywords,
+  toggleKeyword,
   type ClassifiedJob,
+  type FilterState,
 } from "@/lib/filters";
 import {
   TRACKING_STORAGE_KEY,
@@ -31,7 +35,10 @@ import {
 import { JobCard } from "./JobCard";
 import { JobDetail } from "./JobDetail";
 import { FilterBar } from "./FilterBar";
-import { DataPanel } from "./DataPanel";
+import { JobInterests } from "./JobInterests";
+import { ProfileDrawer, PROFILE_DRAWER_ID } from "./ProfileDrawer";
+
+const DRAWER_OPEN_STORAGE_KEY = "vjf_drawer_open_v1";
 
 type LoadState =
   | { status: "loading" }
@@ -49,6 +56,11 @@ export function DashboardPage() {
     TRACKING_STORAGE_KEY,
     {}
   );
+  const [drawerOpen, setDrawerOpen] = useLocalStorage<boolean>(
+    DRAWER_OPEN_STORAGE_KEY,
+    false
+  );
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
 
   function patchTracking(jobId: string, patch: Partial<TrackingEntry>) {
     setTracking(withEntry(tracking, jobId, patch));
@@ -85,15 +97,28 @@ export function DashboardPage() {
     };
   }, []);
 
-  // Re-classify (memoised) whenever the jobs or the profile change.
+  // Derive the engine's UserContext from only the classification-relevant
+  // fields, so editing job interests (target_keywords) does NOT re-run
+  // classification — keywords only filter/rank the display.
+  const user = useMemo(
+    () => userContextFromProfile(profile),
+    [
+      profile.visa_situation,
+      profile.visa_expiry_month,
+      profile.needs_sponsorship_before_start,
+      profile.needs_future_sponsorship,
+      profile.target_start_month,
+    ]
+  );
+
+  // Re-classify (memoised) whenever the jobs or the visa context change.
   const classified = useMemo<ClassifiedJob[]>(() => {
     if (state.status !== "ready") return [];
-    const user = userContextFromProfile(profile);
     return state.file.jobs.map((job) => ({
       job,
       result: classifyPublicJob(job, user),
     }));
-  }, [state, profile]);
+  }, [state, user]);
 
   const filters = useMemo(() => filtersFromParams(searchParams), [searchParams]);
   const visible = useMemo(
@@ -101,6 +126,24 @@ export function DashboardPage() {
     [classified, filters]
   );
   const sources = useMemo(() => availableSources(classified), [classified]);
+  const categories = useMemo(
+    () => availableCategories(classified),
+    [classified]
+  );
+
+  // Seed the live keyword filter from the saved profile once, when the URL
+  // carries no `q` yet, so a returning user sees their interests applied.
+  const seededRef = useRef(false);
+  useEffect(() => {
+    if (seededRef.current) return;
+    seededRef.current = true;
+    if (!searchParams.get("q") && profile.target_keywords.length > 0) {
+      const next = new URLSearchParams(searchParams);
+      next.set("q", profile.target_keywords.join(", "));
+      setSearchParams(next, { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const selectedId = searchParams.get("job");
   // If a selection is filtered out, drop it so the detail pane doesn't show a
@@ -113,7 +156,7 @@ export function DashboardPage() {
     setSearchParams(next, { replace: true });
   }
 
-  function updateFilters(nextFilters: typeof filters) {
+  function updateFilters(nextFilters: FilterState) {
     const next = paramsWithFilters(searchParams, nextFilters);
     // Drop the selected-job param when the filters would hide it.
     const selId = next.get("job");
@@ -128,6 +171,17 @@ export function DashboardPage() {
 
   function resetFilters() {
     updateFilters(DEFAULT_FILTERS);
+  }
+
+  // Keyword edits update the live filter (URL) and persist the saved interests
+  // (profile), so the view is both shareable and remembered next visit.
+  function setKeyword(next: string) {
+    updateFilters({ ...filters, keyword: next });
+    setProfile({ ...profile, target_keywords: parseKeywords(next) });
+  }
+
+  function toggleCategory(category: string) {
+    setKeyword(toggleKeyword(filters.keyword, category));
   }
 
   if (state.status === "loading") {
@@ -145,17 +199,46 @@ export function DashboardPage() {
     );
   }
 
+  const profileUnset = profile.visa_situation === "unknown";
+
   return (
-    <div className="grid h-[calc(100vh-3.5rem)] grid-cols-1 md:grid-cols-[minmax(20rem,26rem)_1fr]">
-      {/* Left pane — profile + list */}
+    <div className="grid h-[calc(100vh-3.5rem)] grid-cols-1 md:grid-cols-[minmax(24rem,34rem)_1fr]">
+      {/* Left pane — toolbar + job list (the main event) */}
       <div className="flex flex-col overflow-hidden border-r border-[hsl(var(--border))]">
-        <div className="border-b border-[hsl(var(--border))] p-3">
-          <VisaProfileForm
-            profile={profile}
-            onChange={setProfile}
-            onReset={resetProfile}
-          />
+        <div className="flex items-center gap-2 border-b border-[hsl(var(--border))] px-3 py-2">
+          <button
+            ref={hamburgerRef}
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            aria-haspopup="dialog"
+            aria-expanded={drawerOpen}
+            aria-controls={PROFILE_DRAWER_ID}
+            aria-label={
+              profileUnset
+                ? "Open visa profile (visa situation not set)"
+                : "Open visa profile and settings"
+            }
+            className="relative inline-flex h-7 w-7 items-center justify-center rounded-md border border-[hsl(var(--border))] hover:bg-[hsl(var(--muted))]"
+          >
+            <Menu className="h-4 w-4" />
+            {profileUnset && (
+              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-[hsl(var(--label-verify))]" />
+            )}
+          </button>
+          <span className="text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+            Visa profile &amp; data
+          </span>
+          <span className="ml-auto text-xs text-muted-foreground">
+            Updated {new Date(state.file.generated_at).toLocaleDateString()}
+          </span>
         </div>
+
+        <JobInterests
+          categories={categories}
+          keyword={filters.keyword}
+          onKeywordChange={setKeyword}
+          onToggleCategory={toggleCategory}
+        />
         <FilterBar
           filters={filters}
           sources={sources}
@@ -164,14 +247,6 @@ export function DashboardPage() {
           onChange={updateFilters}
           onReset={resetFilters}
         />
-        <DataPanel
-          profile={profile}
-          tracking={tracking}
-          onImport={handleImport}
-        />
-        <div className="flex items-center justify-end px-3 py-2 text-xs text-muted-foreground">
-          <span>Updated {new Date(state.file.generated_at).toLocaleDateString()}</span>
-        </div>
         <ul className="flex-1 overflow-y-auto">
           {visible.length === 0 ? (
             <li className="px-3 py-6 text-center text-xs text-muted-foreground">
@@ -209,15 +284,29 @@ export function DashboardPage() {
           <div className="flex h-full items-center justify-center p-8 text-center text-sm text-muted-foreground">
             <div>
               <p>Select a job to see its visa-risk triage and evidence.</p>
-              {profile.visa_situation === "unknown" && (
+              {profileUnset && (
                 <p className="mt-2">
-                  Tip: set your visa situation above for status-aware labels.
+                  Tip: open the menu (top left) to set your visa situation for
+                  status-aware labels.
                 </p>
               )}
             </div>
           </div>
         )}
       </div>
+
+      <ProfileDrawer
+        open={drawerOpen}
+        onClose={() => {
+          setDrawerOpen(false);
+          hamburgerRef.current?.focus();
+        }}
+        profile={profile}
+        onProfileChange={setProfile}
+        onProfileReset={resetProfile}
+        tracking={tracking}
+        onImport={handleImport}
+      />
     </div>
   );
 }
