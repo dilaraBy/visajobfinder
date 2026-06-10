@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "name": "sample labelled evaluation set",
+  "description": "Small synthetic set for exercising Phase 2 metrics before collecting 150-200 real job descriptions.",
+  "records": [
+    {
+      "eval_id": "sample:001",
+      "source": "manual",
+      "url": null,
+      "title": "Graduate Marketing Analyst",
+      "employer_raw": "Example Ltd",
+      "description_text": "Join our graduate programme in London. We welcome applications from candidates with the right to work in the UK. Visa sponsorship available for suitable Skilled Worker roles.",
+      "location": "London",
+      "salary_text": "GBP 32,000 per year",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": true,
+        "matched_name": "Example UK Limited",
+        "notes": "Sample sponsor-register fixture contains Example UK Limited."
+      },
+      "cases": [
+        {
+          "case_id": "sample:001:graduate",
+          "user_context": {
+            "visa_situation": "graduate_route",
+            "needs_sponsorship_before_start": false,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "worth_applying",
+          "expected_evidence": [
+            {
+              "category": "sponsorship_positive",
+              "text_contains": "Visa sponsorship available"
+            }
+          ],
+          "notes": "No detected blocker and employer match is high confidence."
+        },
+        {
+          "case_id": "sample:001:needs_sponsorship",
+          "user_context": {
+            "visa_situation": "needs_sponsorship_before_start",
+            "needs_sponsorship_before_start": true,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "worth_applying",
+          "expected_evidence": [
+            {
+              "category": "sponsorship_positive",
+              "text_contains": "Visa sponsorship available"
+            }
+          ],
+          "notes": "Role-level sponsorship-positive wording and salary are present."
+        }
+      ]
+    },
+    {
+      "eval_id": "sample:002",
+      "source": "manual",
+      "url": null,
+      "title": "Junior Operations Associate",
+      "employer_raw": "NoSponsor Solutions",
+      "description_text": "Applicants must have the right to work in the UK. We cannot provide visa sponsorship for this role.",
+      "location": "Leeds",
+      "salary_text": null,
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "No matching sponsor fixture record."
+      },
+      "cases": [
+        {
+          "case_id": "sample:002:graduate",
+          "user_context": {
+            "visa_situation": "graduate_route",
+            "needs_sponsorship_before_start": false,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "verify_first",
+          "expected_evidence": [
+            {
+              "category": "no_sponsorship",
+              "text_contains": "cannot provide visa sponsorship"
+            }
+          ],
+          "notes": "Graduate Route user may be able to work now, but future sponsorship risk must be verified."
+        },
+        {
+          "case_id": "sample:002:needs_sponsorship",
+          "user_context": {
+            "visa_situation": "needs_sponsorship_before_start",
+            "needs_sponsorship_before_start": true,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "likely_blocked",
+          "expected_evidence": [
+            {
+              "category": "no_sponsorship",
+              "text_contains": "cannot provide visa sponsorship"
+            }
+          ],
+          "notes": "No-sponsorship wording is a strong blocker for this selected situation."
+        }
+      ]
+    },
+    {
+      "eval_id": "sample:003",
+      "source": "manual",
+      "url": null,
+      "title": "Graduate Consultant",
+      "employer_raw": "Northbridge Analytics",
+      "description_text": "Candidates must have the right to work in the UK now and in the future. The role may involve client travel.",
+      "location": "London",
+      "salary_text": "GBP 35,000 per year",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": true,
+        "matched_name": "Northbridge Analytics Ltd",
+        "notes": "Alias/exact-normalised match in sample sponsor fixture."
+      },
+      "cases": [
+        {
+          "case_id": "sample:003:graduate",
+          "user_context": {
+            "visa_situation": "graduate_route",
+            "needs_sponsorship_before_start": false,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "verify_first",
+          "expected_evidence": [
+            {
+              "category": "future_sponsorship_risk",
+              "text_contains": "now and in the future"
+            }
+          ],
+          "notes": "Future right-to-work wording is ambiguous and should be verified."
+        },
+        {
+          "case_id": "sample:003:needs_sponsorship",
+          "user_context": {
+            "visa_situation": "needs_sponsorship_before_start",
+            "needs_sponsorship_before_start": true,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "verify_first",
+          "expected_evidence": [
+            {
+              "category": "future_sponsorship_risk",
+              "text_contains": "now and in the future"
+            }
+          ],
+          "notes": "The phrase does not clearly confirm role-level sponsorship before start."
+        }
+      ]
+    },
+    {
+      "eval_id": "sample:004",
+      "source": "manual",
+      "url": null,
+      "title": "Policy Analyst",
+      "employer_raw": "Bright Future University",
+      "description_text": "British citizenship required due to funder restrictions. The role is based in Manchester.",
+      "location": "Manchester",
+      "salary_text": "GBP 31,000 per year",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": true,
+        "matched_name": "Bright Future University",
+        "notes": "Exact fixture match."
+      },
+      "cases": [
+        {
+          "case_id": "sample:004:graduate",
+          "user_context": {
+            "visa_situation": "graduate_route",
+            "needs_sponsorship_before_start": false,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "likely_blocked",
+          "expected_evidence": [
+            {
+              "category": "citizenship_required",
+              "text_contains": "British citizenship required"
+            }
+          ],
+          "notes": "Explicit citizenship requirement is a strong blocker signal."
+        },
+        {
+          "case_id": "sample:004:needs_sponsorship",
+          "user_context": {
+            "visa_situation": "needs_sponsorship_before_start",
+            "needs_sponsorship_before_start": true,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "likely_blocked",
+          "expected_evidence": [
+            {
+              "category": "citizenship_required",
+              "text_contains": "British citizenship required"
+            }
+          ],
+          "notes": "Explicit citizenship requirement is a strong blocker signal."
+        }
+      ]
+    },
+    {
+      "eval_id": "sample:005",
+      "source": "manual",
+      "url": null,
+      "title": "Junior Project Coordinator",
+      "employer_raw": "CareWorks Group",
+      "description_text": "The successful candidate may need SC clearance and five years UK residency for some client sites.",
+      "location": "Birmingham",
+      "salary_text": "GBP 30,000 per year",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": true,
+        "matched_name": "CareWorks Group Limited",
+        "notes": "Exact-normalised fixture match."
+      },
+      "cases": [
+        {
+          "case_id": "sample:005:graduate",
+          "user_context": {
+            "visa_situation": "graduate_route",
+            "needs_sponsorship_before_start": false,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "verify_first",
+          "expected_evidence": [
+            {
+              "category": "security_clearance",
+              "text_contains": "SC clearance"
+            }
+          ],
+          "notes": "Security clearance wording is a material uncertainty."
+        },
+        {
+          "case_id": "sample:005:needs_sponsorship",
+          "user_context": {
+            "visa_situation": "needs_sponsorship_before_start",
+            "needs_sponsorship_before_start": true,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "verify_first",
+          "expected_evidence": [
+            {
+              "category": "security_clearance",
+              "text_contains": "SC clearance"
+            }
+          ],
+          "notes": "Security clearance wording is a material uncertainty."
+        }
+      ]
+    },
+    {
+      "eval_id": "sample:006",
+      "source": "manual",
+      "url": null,
+      "title": "Business Analyst Intern",
+      "employer_raw": "North Analytics",
+      "description_text": "This internship supports our operations team. Applicants should have the right to work in the UK.",
+      "location": "London",
+      "salary_text": null,
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Human label treats this as not a reliable sponsor-register match because the employer name is partial."
+      },
+      "cases": [
+        {
+          "case_id": "sample:006:graduate",
+          "user_context": {
+            "visa_situation": "graduate_route",
+            "needs_sponsorship_before_start": false,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "unknown",
+          "expected_evidence": [],
+          "notes": "Low-confidence sponsor candidate is not enough to judge future sponsorship risk."
+        },
+        {
+          "case_id": "sample:006:needs_sponsorship",
+          "user_context": {
+            "visa_situation": "needs_sponsorship_before_start",
+            "needs_sponsorship_before_start": true,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "unknown",
+          "expected_evidence": [],
+          "notes": "Low-confidence sponsor candidate is not enough for a sponsorship-before-start user."
+        }
+      ]
+    },
+    {
+      "eval_id": "sample:007",
+      "source": "manual",
+      "url": null,
+      "title": "Graduate Research Assistant",
+      "employer_raw": "",
+      "description_text": "",
+      "location": "Remote",
+      "salary_text": null,
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Employer is missing."
+      },
+      "cases": [
+        {
+          "case_id": "sample:007:graduate",
+          "user_context": {
+            "visa_situation": "graduate_route",
+            "needs_sponsorship_before_start": false,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "unknown",
+          "expected_evidence": [],
+          "notes": "Missing employer and description make classification unreliable."
+        },
+        {
+          "case_id": "sample:007:needs_sponsorship",
+          "user_context": {
+            "visa_situation": "needs_sponsorship_before_start",
+            "needs_sponsorship_before_start": true,
+            "needs_future_sponsorship": true
+          },
+          "expected_label": "unknown",
+          "expected_evidence": [],
+          "notes": "Missing employer and description make classification unreliable."
+        }
+      ]
+    }
+  ]
+}
+

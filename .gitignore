@@ -1,0 +1,24 @@
+# Local/full job-description captures can contain long third-party text.
+# Keep public eval files to excerpts, evidence phrases, labels, URLs, and hashes.
+data/eval/full_jds.local.json
+data/eval/full_jds.local.jsonl
+data/raw/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local API credentials for live source adapters. Never commit real keys.
+.env
+.env.local
+
+# Raw GOV.UK sponsor register download (~11 MB). Rebuild via
+# scripts/build_sponsor_register.py — see README for the download step.
+*Worker_and_Temporary_Worker.csv
+
+# Claude Code local settings (machine-specific permissions).
+.claude/settings.local.json
+
+# Frontend build artifacts and dependencies.
+frontend/node_modules/
+frontend/dist/

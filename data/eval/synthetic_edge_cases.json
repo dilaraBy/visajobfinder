@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "name": "synthetic edge-case rule-coverage fixtures",
+  "synthetic": true,
+  "synthetic_notice": "SYNTHETIC DATA — NOT REAL JOB ADS. These records are hand-crafted to exercise specific engine rule paths and boundary conditions. They are NOT real job postings, do NOT have real source URLs, and MUST NOT be included in real-seed evaluation metrics. Report these metrics separately as 'rule harness' results. See docs/EVALUATION_PLAN.md.",
+  "collected_at": "2026-06-04",
+  "collection_notes": [
+    "Each record targets a specific deterministic rule path in pipeline/classifier/engine.py or pipeline/classifier/phrase_scanner.py.",
+    "source_url is null for all records — these are invented descriptions, not excerpts from real ads.",
+    "The 'name' field on each record describes the rule being exercised.",
+    "These records are suitable for checking that the engine does not regress on specific phrase patterns.",
+    "Do not use these counts in any public README claim about real-world performance."
+  ],
+  "label_definitions": {
+    "worth_applying": "No detected blocker for the selected visa situation, but the user should still verify with the employer.",
+    "verify_first": "Potentially viable, but material information is missing or ambiguous.",
+    "likely_blocked": "Strong public evidence suggests the user should not spend time applying for this selected visa situation.",
+    "unknown": "The available public evidence is too incomplete or contradictory to judge."
+  },
+  "records": [
+    {
+      "eval_id": "synth-001",
+      "name": "contradictory-wording: no_sponsorship + sponsorship_positive in same description",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Marketing Executive",
+      "employer_raw": "Example Ltd",
+      "location": "London",
+      "salary_text": "GBP 30,000 per year",
+      "description_text": "Visa sponsorship is available for qualified candidates. However, we cannot provide visa sponsorship for this position.",
+      "evidence_phrases": [
+        {
+          "category": "sponsorship_positive",
+          "text": "Visa sponsorship is available"
+        },
+        {
+          "category": "no_sponsorship",
+          "text": "we cannot provide visa sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "Contradictory wording should always produce verify_first regardless of visa situation."
+    },
+    {
+      "eval_id": "synth-002",
+      "name": "future-sponsorship-phrasing: now-or-in-the-future question with no positive signal",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Data Analyst",
+      "employer_raw": "Unknown Employer Ltd",
+      "location": "Manchester",
+      "salary_text": "GBP 35,000 per year",
+      "description_text": "Will you now or in the future require visa sponsorship to work in the UK?",
+      "evidence_phrases": [
+        {
+          "category": "future_sponsorship_risk",
+          "text": "Will you now or in the future require visa sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "A future-sponsorship question alone (no sponsor-positive signal, no sponsor match) should produce verify_first for Graduate Route. For NSS it is also verify_first since no sponsor-register evidence is present."
+    },
+    {
+      "eval_id": "synth-003",
+      "name": "future-sponsorship-phrasing: now-or-future + confirmed sponsor match + sponsorship_positive",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Software Engineer",
+      "employer_raw": "Octopus Energy Group",
+      "location": "London",
+      "salary_text": null,
+      "description_text": "We are a registered visa sponsor and consider sponsorship on a case by case basis, though we cannot offer it for every role. Please indicate if you have a temporary right to work in the UK and might need sponsorship in the future.",
+      "evidence_phrases": [
+        {
+          "category": "sponsorship_positive",
+          "text": "registered visa sponsor"
+        },
+        {
+          "category": "sponsorship_positive",
+          "text": "consider sponsorship on a case by case basis"
+        },
+        {
+          "category": "ambiguous",
+          "text": "cannot offer it for every role"
+        },
+        {
+          "category": "future_sponsorship_risk",
+          "text": "temporary right to work in the UK and might need sponsorship in the future"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "Graduate Route: future_sponsorship_risk + sponsorship_positive + confirmed sponsor match overrides the future question to worth_applying. NSS: still verify_first because salary is absent and role-level sponsorship is not confirmed."
+    },
+    {
+      "eval_id": "synth-004",
+      "name": "security-clearance: SC clearance required with no sponsorship-related phrases",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Security Analyst",
+      "employer_raw": "Example Ltd",
+      "location": "London",
+      "salary_text": "GBP 50,000 per year",
+      "description_text": "Candidates must hold current SC clearance or be willing to undergo SC clearance vetting.",
+      "evidence_phrases": [
+        {
+          "category": "security_clearance",
+          "text": "SC clearance"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "human_notes": "Security clearance is not a citizenship mandate but may require extended UK residency. Engine should produce verify_first not likely_blocked for both visa situations."
+    },
+    {
+      "eval_id": "synth-005",
+      "name": "no-sponsorship-explicit-now-and-future: decisive block for graduate_route and NSS",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Graduate Engineer",
+      "employer_raw": "Unknown Employer Ltd",
+      "location": "Birmingham",
+      "salary_text": "GBP 28,000 per year",
+      "description_text": "We are unable to sponsor employees, either now or in the future, so candidates must be eligible to work in the UK.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "unable to sponsor employees, either now or in the future"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "likely_blocked",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "Explicit 'now or in the future' no-sponsorship phrase is a hard block for graduate_route (future conversion impossible) and NSS. This covers the no_sponsor_unable_employees_future_001 rule."
+    },
+    {
+      "eval_id": "synth-006",
+      "name": "no-sponsorship-only: block for NSS, verify_first for graduate_route needing future sponsorship",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Customer Success Manager",
+      "employer_raw": "Unknown Employer Ltd",
+      "location": "London",
+      "salary_text": null,
+      "description_text": "Please confirm that you have the right to work in the UK without sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "right to work in the UK without sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "Generic 'without sponsorship' phrasing: NSS is likely_blocked because sponsorship is unavailable. Graduate Route user has current RTW so likely can apply now, but future sponsorship is blocked — verify_first."
+    },
+    {
+      "eval_id": "synth-007",
+      "name": "citizenship-required: decisive blocker for both visa situations",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Security Officer",
+      "employer_raw": "Example Ltd",
+      "location": "London",
+      "salary_text": "GBP 32,000 per year",
+      "description_text": "Applicants must be British citizens or UK Nationals only and able to obtain security clearance.",
+      "evidence_phrases": [
+        {
+          "category": "citizenship_required",
+          "text": "UK Nationals only"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "likely_blocked",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "human_notes": "British citizenship is a decisive blocker for all visa situations including Graduate Route."
+    },
+    {
+      "eval_id": "synth-008",
+      "name": "permanent-rtw-phrase: verify_first for graduate_route, likely_blocked for NSS",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Legal Associate",
+      "employer_raw": "Unknown Employer Ltd",
+      "location": "London",
+      "salary_text": "GBP 45,000 per year",
+      "description_text": "All applicants must have the right to work in the UK without restriction.",
+      "evidence_phrases": [
+        {
+          "category": "permanent_right_to_work",
+          "text": "right to work in the UK without restriction"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "human_notes": "This covers the key rule-tuning fix: permanent_right_to_work is not a hard block for Graduate Route (they have legal RTW but it is restricted). NSS is likely_blocked because they would need sponsorship from day one."
+    },
+    {
+      "eval_id": "synth-009",
+      "name": "salary-missing-but-sponsor-match: NSS verify_first, GR worth_applying",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Graduate Analyst",
+      "employer_raw": "Octopus Energy Group",
+      "location": "London",
+      "salary_text": null,
+      "description_text": "We are a registered visa sponsor. We can sponsor suitable candidates for this role.",
+      "evidence_phrases": [
+        {
+          "category": "sponsorship_positive",
+          "text": "registered visa sponsor"
+        },
+        {
+          "category": "sponsorship_positive",
+          "text": "We can sponsor"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "Sponsor match + sponsorship_positive but no salary. GR worth_applying because salary is not a gating requirement for current RTW use. NSS verify_first because salary must be checked against Skilled Worker thresholds."
+    },
+    {
+      "eval_id": "synth-010",
+      "name": "no-employer: both situations unknown",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Graduate Developer",
+      "employer_raw": "",
+      "location": "London",
+      "salary_text": "GBP 35,000 per year",
+      "description_text": "Interesting graduate role with competitive salary.",
+      "evidence_phrases": [],
+      "expected_labels": {
+        "graduate_route": "unknown",
+        "needs_sponsorship_before_start": "unknown"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "Missing employer name makes sponsor-register matching impossible. Engine should return unknown for both visa situations."
+    },
+    {
+      "eval_id": "synth-011",
+      "name": "five-years-uk-residency: security_clearance verify_first for all situations",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Defence Analyst",
+      "employer_raw": "Example Ltd",
+      "location": "London",
+      "salary_text": "GBP 55,000 per year",
+      "description_text": "Candidates must have 5 years UK residency for clearance purposes.",
+      "evidence_phrases": [
+        {
+          "category": "security_clearance",
+          "text": "5 years UK residency"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "human_notes": "Five-year UK residency requirement is security-clearance-related, not citizenship. Both situations should verify the exact clearance requirements."
+    },
+    {
+      "eval_id": "synth-012",
+      "name": "must-not-require-sponsorship-now-or-future: both likely_blocked",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Operations Manager",
+      "employer_raw": "Unknown Employer Ltd",
+      "location": "Leeds",
+      "salary_text": "GBP 40,000 per year",
+      "description_text": "Candidates must not require visa sponsorship now or in the future.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "must not require visa sponsorship now or in the future"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "likely_blocked",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "human_notes": "Explicit 'now or in the future' must-not-require phrase. For Graduate Route: future sponsorship is categorically blocked so likely_blocked is appropriate. Covers no_sponsor_now_future_001 rule."
+    },
+    {
+      "eval_id": "synth-013",
+      "name": "sponsorship-case-by-case-no-sponsor-match: GR worth_applying, NSS verify_first",
+      "synthetic": true,
+      "source": "synthetic",
+      "source_url": null,
+      "title": "Business Analyst",
+      "employer_raw": "Unknown Employer Ltd",
+      "location": "London",
+      "salary_text": "GBP 38,000 per year",
+      "description_text": "We consider sponsorship on a case by case basis for the right candidates.",
+      "evidence_phrases": [
+        {
+          "category": "sponsorship_positive",
+          "text": "consider sponsorship on a case by case basis"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "eval_use": "classification_and_evidence",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "human_notes": "Sponsorship-positive wording without a sponsor-register match. GR worth_applying because no blockers detected and user has current RTW. NSS verify_first because no confirmed register match and role-level sponsorship is not confirmed."
+    }
+  ]
+}

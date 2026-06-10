@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "id": "adz-20001",
+      "title": "Junior Product Analyst",
+      "company": {
+        "display_name": "Example Ltd"
+      },
+      "description": "Graduate-friendly analyst role. Candidates should be eligible to work in the UK. Sponsorship is considered case by case for this specific role.",
+      "location": {
+        "display_name": "Manchester",
+        "area": ["UK", "North West England", "Manchester"]
+      },
+      "salary_min": 32000,
+      "salary_max": 34000,
+      "created": "2026-06-03T10:30:00Z",
+      "redirect_url": "https://adzuna.example.test/jobs/adz-20001"
+    }
+  ]
+}

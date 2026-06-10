@@ -1,0 +1,2247 @@
+{
+  "generated_by": "scripts/gen_parity_golden.py",
+  "note": "Golden outputs from the live Python visa engine. The TS port must reproduce label, evidence_categories, and sponsor match. Do not hand-edit; regenerate with python scripts/gen_parity_golden.py.",
+  "sponsor_register_csv": "data\\sponsor_register\\sample_sponsors.csv",
+  "cases": [
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-001:graduate_route",
+      "eval_id": "real-001",
+      "job": {
+        "job_id": "real-001",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Graduate Sales Executive (London)",
+        "employer_raw": "Fresha",
+        "description_text": "Graduate Sales Executive in London. Application question asks: Do you have the legal right to work in London? Please select 'No' if you would require visa sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/fresha/34abc3c7-4cbc-4d1e-b7e4-7ae7ff26a069/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-001:needs_sponsorship_before_start",
+      "eval_id": "real-001",
+      "job": {
+        "job_id": "real-001",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Graduate Sales Executive (London)",
+        "employer_raw": "Fresha",
+        "description_text": "Graduate Sales Executive in London. Application question asks: Do you have the legal right to work in London? Please select 'No' if you would require visa sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/fresha/34abc3c7-4cbc-4d1e-b7e4-7ae7ff26a069/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-002:graduate_route",
+      "eval_id": "real-002",
+      "job": {
+        "job_id": "real-002",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Graduate Sales Role (London)",
+        "employer_raw": "Fresha",
+        "description_text": "Graduate Sales Role in London. Application asks whether the candidate can work 5 days a week in the London office and whether they have the legal right to work in the UK. The right-to-work question says to select 'No' if visa sponsorship would be required.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/fresha/92fcded5-8d77-48c1-8fce-868a0b1440c0/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-002:needs_sponsorship_before_start",
+      "eval_id": "real-002",
+      "job": {
+        "job_id": "real-002",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Graduate Sales Role (London)",
+        "employer_raw": "Fresha",
+        "description_text": "Graduate Sales Role in London. Application asks whether the candidate can work 5 days a week in the London office and whether they have the legal right to work in the UK. The right-to-work question says to select 'No' if visa sponsorship would be required.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/fresha/92fcded5-8d77-48c1-8fce-868a0b1440c0/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-003:graduate_route",
+      "eval_id": "real-003",
+      "job": {
+        "job_id": "real-003",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Power Grid Analyst - 6 month FTC",
+        "employer_raw": "Octopus Energy Group",
+        "description_text": "Power Grid Analyst fixed-term role. Application says Octopus Energy is a registered visa sponsor and considers sponsorship case by case, but cannot offer it for every role.",
+        "location": "London (GB) / Paris (FR)",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/octoenergy/df8ba0a7-60d3-43a2-8f28-bfad9b833b73/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "worth_applying",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match",
+          "sponsorship_positive"
+        ],
+        "sponsor": {
+          "matched_name": "Octopus Energy Group",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-003:needs_sponsorship_before_start",
+      "eval_id": "real-003",
+      "job": {
+        "job_id": "real-003",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Power Grid Analyst - 6 month FTC",
+        "employer_raw": "Octopus Energy Group",
+        "description_text": "Power Grid Analyst fixed-term role. Application says Octopus Energy is a registered visa sponsor and considers sponsorship case by case, but cannot offer it for every role.",
+        "location": "London (GB) / Paris (FR)",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/octoenergy/df8ba0a7-60d3-43a2-8f28-bfad9b833b73/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match",
+          "sponsorship_positive"
+        ],
+        "sponsor": {
+          "matched_name": "Octopus Energy Group",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-004:graduate_route",
+      "eval_id": "real-004",
+      "job": {
+        "job_id": "real-004",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Customer Care Executive - Complaints & Feedback",
+        "employer_raw": "Octopus Energy Group",
+        "description_text": "Customer Care Executive role. Application states Octopus Energy is a registered visa sponsor, sponsorship is considered case by case, and asks candidates to select current right-to-work status including temporary right to work and sponsorship needs.",
+        "location": "London (GB) / Brighton (GB)",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/octoenergy/f68d14db-4ed0-4f82-949e-c67850040e3b/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "worth_applying",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match",
+          "sponsorship_positive"
+        ],
+        "sponsor": {
+          "matched_name": "Octopus Energy Group",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-004:needs_sponsorship_before_start",
+      "eval_id": "real-004",
+      "job": {
+        "job_id": "real-004",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Customer Care Executive - Complaints & Feedback",
+        "employer_raw": "Octopus Energy Group",
+        "description_text": "Customer Care Executive role. Application states Octopus Energy is a registered visa sponsor, sponsorship is considered case by case, and asks candidates to select current right-to-work status including temporary right to work and sponsorship needs.",
+        "location": "London (GB) / Brighton (GB)",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/octoenergy/f68d14db-4ed0-4f82-949e-c67850040e3b/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match",
+          "sponsorship_positive"
+        ],
+        "sponsor": {
+          "matched_name": "Octopus Energy Group",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-005:graduate_route",
+      "eval_id": "real-005",
+      "job": {
+        "job_id": "real-005",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Octopus In Colour Internship 2026 - Octopus Energy Generation - Global Opportunities",
+        "employer_raw": "Octopus Energy Group",
+        "description_text": "Internship dates are 6 July to 28 August 2026. Application asks whether the candidate has full right to work in the UK without sponsorship between those dates.",
+        "location": "London (GB)",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/octoenergy/7f812f9c-052b-46c8-b24f-d61b59f73068/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "Octopus Energy Group",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-005:needs_sponsorship_before_start",
+      "eval_id": "real-005",
+      "job": {
+        "job_id": "real-005",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Octopus In Colour Internship 2026 - Octopus Energy Generation - Global Opportunities",
+        "employer_raw": "Octopus Energy Group",
+        "description_text": "Internship dates are 6 July to 28 August 2026. Application asks whether the candidate has full right to work in the UK without sponsorship between those dates.",
+        "location": "London (GB)",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/octoenergy/7f812f9c-052b-46c8-b24f-d61b59f73068/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "Octopus Energy Group",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-006:graduate_route",
+      "eval_id": "real-006",
+      "job": {
+        "job_id": "real-006",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Founder's Associate - Growth",
+        "employer_raw": "Gopuff",
+        "description_text": "Founder's Associate role in London. Application asks whether the candidate has the right to work in the UK, with options including yes, yes but needing sponsorship soon, and no needing sponsorship.",
+        "location": "London, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/gopuff/a7b6b36d-40ed-4fc8-ac8f-60e86f0676ff/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-006:needs_sponsorship_before_start",
+      "eval_id": "real-006",
+      "job": {
+        "job_id": "real-006",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Founder's Associate - Growth",
+        "employer_raw": "Gopuff",
+        "description_text": "Founder's Associate role in London. Application asks whether the candidate has the right to work in the UK, with options including yes, yes but needing sponsorship soon, and no needing sponsorship.",
+        "location": "London, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/gopuff/a7b6b36d-40ed-4fc8-ac8f-60e86f0676ff/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-007:graduate_route",
+      "eval_id": "real-007",
+      "job": {
+        "job_id": "real-007",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Buyer",
+        "employer_raw": "Moonpig",
+        "description_text": "Buyer role. Right-to-work application question includes Yes, No, and I require sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/moonpig/8ddcde5f-5c15-49b7-b7ca-c6264a704a79/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "worth_applying",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-007:needs_sponsorship_before_start",
+      "eval_id": "real-007",
+      "job": {
+        "job_id": "real-007",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Buyer",
+        "employer_raw": "Moonpig",
+        "description_text": "Buyer role. Right-to-work application question includes Yes, No, and I require sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/moonpig/8ddcde5f-5c15-49b7-b7ca-c6264a704a79/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-008:graduate_route",
+      "eval_id": "real-008",
+      "job": {
+        "job_id": "real-008",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Lead Counsel",
+        "employer_raw": "Moonpig",
+        "description_text": "Lead Counsel role. Right-to-work question includes Yes, No, and I require sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/moonpig/13e4e609-c967-4224-89f0-7f6d90d70433/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "worth_applying",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-008:needs_sponsorship_before_start",
+      "eval_id": "real-008",
+      "job": {
+        "job_id": "real-008",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Lead Counsel",
+        "employer_raw": "Moonpig",
+        "description_text": "Lead Counsel role. Right-to-work question includes Yes, No, and I require sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/moonpig/13e4e609-c967-4224-89f0-7f6d90d70433/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-009:graduate_route",
+      "eval_id": "real-009",
+      "job": {
+        "job_id": "real-009",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Growth Design Director",
+        "employer_raw": "Pipedrive",
+        "description_text": "Growth Design Director role. Right-to-work section asks whether the candidate currently has the legal right to work in the UK without requiring visa sponsorship.",
+        "location": "UK, London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/pipedrive/7425154d-cecb-4f76-8f38-02caa723fff9/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-009:needs_sponsorship_before_start",
+      "eval_id": "real-009",
+      "job": {
+        "job_id": "real-009",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Growth Design Director",
+        "employer_raw": "Pipedrive",
+        "description_text": "Growth Design Director role. Right-to-work section asks whether the candidate currently has the legal right to work in the UK without requiring visa sponsorship.",
+        "location": "UK, London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/pipedrive/7425154d-cecb-4f76-8f38-02caa723fff9/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-010:graduate_route",
+      "eval_id": "real-010",
+      "job": {
+        "job_id": "real-010",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Director of Product Analytics",
+        "employer_raw": "Pipedrive",
+        "description_text": "Director of Product Analytics role. Application asks whether the candidate has legal right to work in the UK without requiring visa sponsorship.",
+        "location": "UK, London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/pipedrive/b26d1dd3-2f24-4b34-8a01-2c4fbb3e2673/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-010:needs_sponsorship_before_start",
+      "eval_id": "real-010",
+      "job": {
+        "job_id": "real-010",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Director of Product Analytics",
+        "employer_raw": "Pipedrive",
+        "description_text": "Director of Product Analytics role. Application asks whether the candidate has legal right to work in the UK without requiring visa sponsorship.",
+        "location": "UK, London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/pipedrive/b26d1dd3-2f24-4b34-8a01-2c4fbb3e2673/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-011:graduate_route",
+      "eval_id": "real-011",
+      "job": {
+        "job_id": "real-011",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Coordinator, Sales, International",
+        "employer_raw": "e.l.f. Beauty",
+        "description_text": "Coordinator sales role. UK screening question asks whether the candidate has right to work in the UK without sponsorship.",
+        "location": "London, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/elfbeauty/f94573a7-1b6a-45e3-bb72-c2fe6c501471/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-011:needs_sponsorship_before_start",
+      "eval_id": "real-011",
+      "job": {
+        "job_id": "real-011",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Coordinator, Sales, International",
+        "employer_raw": "e.l.f. Beauty",
+        "description_text": "Coordinator sales role. UK screening question asks whether the candidate has right to work in the UK without sponsorship.",
+        "location": "London, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/elfbeauty/f94573a7-1b6a-45e3-bb72-c2fe6c501471/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-012:graduate_route",
+      "eval_id": "real-012",
+      "job": {
+        "job_id": "real-012",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Interim, Coordinator, Inventory Control",
+        "employer_raw": "e.l.f. Beauty",
+        "description_text": "Interim Coordinator Inventory Control role. UK screening question asks whether the candidate has right to work in the UK without sponsorship.",
+        "location": "London, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/elfbeauty/b11c3c8c-de72-4477-83e4-ba2a99975c27/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-012:needs_sponsorship_before_start",
+      "eval_id": "real-012",
+      "job": {
+        "job_id": "real-012",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "Interim, Coordinator, Inventory Control",
+        "employer_raw": "e.l.f. Beauty",
+        "description_text": "Interim Coordinator Inventory Control role. UK screening question asks whether the candidate has right to work in the UK without sponsorship.",
+        "location": "London, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/elfbeauty/b11c3c8c-de72-4477-83e4-ba2a99975c27/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-013:graduate_route",
+      "eval_id": "real-013",
+      "job": {
+        "job_id": "real-013",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "HR Business Partner",
+        "employer_raw": "Kpler",
+        "description_text": "HR Business Partner role in London. Application section asks about right to work and live in the UK without sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/kpler/ee53a8a3-cd4a-4045-8101-0232fa34f970/apply"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-013:needs_sponsorship_before_start",
+      "eval_id": "real-013",
+      "job": {
+        "job_id": "real-013",
+        "source": "lever",
+        "source_job_id": null,
+        "title": "HR Business Partner",
+        "employer_raw": "Kpler",
+        "description_text": "HR Business Partner role in London. Application section asks about right to work and live in the UK without sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://jobs.lever.co/kpler/ee53a8a3-cd4a-4045-8101-0232fa34f970/apply"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-014:graduate_route",
+      "eval_id": "real-014",
+      "job": {
+        "job_id": "real-014",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Associate, Client Service, Bilingual Italian/English",
+        "employer_raw": "Guidepoint",
+        "description_text": "Associate Client Service role. Posting states all applicants must have the right to work in the UK and application asks whether the candidate will require visa sponsorship at any point to work in the UK.",
+        "location": "London, England, United Kingdom",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=7822520002"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-014:needs_sponsorship_before_start",
+      "eval_id": "real-014",
+      "job": {
+        "job_id": "real-014",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Associate, Client Service, Bilingual Italian/English",
+        "employer_raw": "Guidepoint",
+        "description_text": "Associate Client Service role. Posting states all applicants must have the right to work in the UK and application asks whether the candidate will require visa sponsorship at any point to work in the UK.",
+        "location": "London, England, United Kingdom",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=7822520002"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-015:graduate_route",
+      "eval_id": "real-015",
+      "job": {
+        "job_id": "real-015",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Sales Development Representative, Institutional",
+        "employer_raw": "Guidepoint",
+        "description_text": "Entry-level Sales Development Representative role. Posting says all applicants must have right to work in the UK and asks if the candidate will require visa sponsorship at any point.",
+        "location": "London, England, United Kingdom",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=8152565002"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-015:needs_sponsorship_before_start",
+      "eval_id": "real-015",
+      "job": {
+        "job_id": "real-015",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Sales Development Representative, Institutional",
+        "employer_raw": "Guidepoint",
+        "description_text": "Entry-level Sales Development Representative role. Posting says all applicants must have right to work in the UK and asks if the candidate will require visa sponsorship at any point.",
+        "location": "London, England, United Kingdom",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=8152565002"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-016:graduate_route",
+      "eval_id": "real-016",
+      "job": {
+        "job_id": "real-016",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Senior Associate, Client Service",
+        "employer_raw": "Guidepoint",
+        "description_text": "Senior Associate Client Service role. Posting states applicants must have the right to work in the UK and asks whether visa sponsorship will be required at any point.",
+        "location": "London, England, United Kingdom",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=7511119002"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-016:needs_sponsorship_before_start",
+      "eval_id": "real-016",
+      "job": {
+        "job_id": "real-016",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Senior Associate, Client Service",
+        "employer_raw": "Guidepoint",
+        "description_text": "Senior Associate Client Service role. Posting states applicants must have the right to work in the UK and asks whether visa sponsorship will be required at any point.",
+        "location": "London, England, United Kingdom",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=7511119002"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-017:graduate_route",
+      "eval_id": "real-017",
+      "job": {
+        "job_id": "real-017",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Senior / Staff Product Manager",
+        "employer_raw": "Recursion",
+        "description_text": "Product Manager role. Application asks the candidate to select countries where they have work authorization and asks whether they will now or in the future require visa sponsorship.",
+        "location": "London, England; Oxford, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?token=7229030"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-017:needs_sponsorship_before_start",
+      "eval_id": "real-017",
+      "job": {
+        "job_id": "real-017",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Senior / Staff Product Manager",
+        "employer_raw": "Recursion",
+        "description_text": "Product Manager role. Application asks the candidate to select countries where they have work authorization and asks whether they will now or in the future require visa sponsorship.",
+        "location": "London, England; Oxford, England",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?token=7229030"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-018:graduate_route",
+      "eval_id": "real-018",
+      "job": {
+        "job_id": "real-018",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Senior Software Engineer (Fin-Crime)",
+        "employer_raw": "Ebury",
+        "description_text": "Senior Software Engineer role. Application asks whether the candidate has right to work in the UK without restriction and whether they will now or in the future require visa sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=ebury&token=4640596101"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "future_sponsorship_risk",
+          "permanent_right_to_work",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-018:needs_sponsorship_before_start",
+      "eval_id": "real-018",
+      "job": {
+        "job_id": "real-018",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Senior Software Engineer (Fin-Crime)",
+        "employer_raw": "Ebury",
+        "description_text": "Senior Software Engineer role. Application asks whether the candidate has right to work in the UK without restriction and whether they will now or in the future require visa sponsorship.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?for=ebury&token=4640596101"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "future_sponsorship_risk",
+          "permanent_right_to_work",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-019:graduate_route",
+      "eval_id": "real-019",
+      "job": {
+        "job_id": "real-019",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Fire Engineers UKI (All Levels)",
+        "employer_raw": "Jensen Hughes",
+        "description_text": "Fire Engineers role across UK locations. Requirements say experience levels from graduate through technical director will be considered and include right to work in the UK.",
+        "location": "Birmingham, Edinburgh, Glasgow, London, Manchester, Remote",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?token=4899722008"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "worth_applying",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-019:needs_sponsorship_before_start",
+      "eval_id": "real-019",
+      "job": {
+        "job_id": "real-019",
+        "source": "greenhouse",
+        "source_job_id": null,
+        "title": "Fire Engineers UKI (All Levels)",
+        "employer_raw": "Jensen Hughes",
+        "description_text": "Fire Engineers role across UK locations. Requirements say experience levels from graduate through technical director will be considered and include right to work in the UK.",
+        "location": "Birmingham, Edinburgh, Glasgow, London, Manchester, Remote",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://boards.greenhouse.io/embed/job_app?token=4899722008"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-020:graduate_route",
+      "eval_id": "real-020",
+      "job": {
+        "job_id": "real-020",
+        "source": "reed",
+        "source_job_id": null,
+        "title": "Graduate Structural Engineer",
+        "employer_raw": "Unknown employer via Reed",
+        "description_text": "Graduate Structural Engineer role. Reed public snippet says the employer is unable to sponsor employees either now or in the future, so candidates must be eligible to work in the UK.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://www.reed.co.uk/jobs/graduate-structural-engineer/55107865"
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.real.json",
+      "case_id": "real-020:needs_sponsorship_before_start",
+      "eval_id": "real-020",
+      "job": {
+        "job_id": "real-020",
+        "source": "reed",
+        "source_job_id": null,
+        "title": "Graduate Structural Engineer",
+        "employer_raw": "Unknown employer via Reed",
+        "description_text": "Graduate Structural Engineer role. Reed public snippet says the employer is unable to sponsor employees either now or in the future, so candidates must be eligible to work in the UK.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": "https://www.reed.co.uk/jobs/graduate-structural-engineer/55107865"
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:001:graduate",
+      "eval_id": "sample:001",
+      "job": {
+        "job_id": "sample:001",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Graduate Marketing Analyst",
+        "employer_raw": "Example Ltd",
+        "description_text": "Join our graduate programme in London. We welcome applications from candidates with the right to work in the UK. Visa sponsorship available for suitable Skilled Worker roles.",
+        "location": "London",
+        "salary_text": "GBP 32,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "worth_applying",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match",
+          "sponsorship_positive"
+        ],
+        "sponsor": {
+          "matched_name": "Example UK Limited",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:001:needs_sponsorship",
+      "eval_id": "sample:001",
+      "job": {
+        "job_id": "sample:001",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Graduate Marketing Analyst",
+        "employer_raw": "Example Ltd",
+        "description_text": "Join our graduate programme in London. We welcome applications from candidates with the right to work in the UK. Visa sponsorship available for suitable Skilled Worker roles.",
+        "location": "London",
+        "salary_text": "GBP 32,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "worth_applying",
+        "evidence_categories": [
+          "ambiguous",
+          "sponsor_match",
+          "sponsorship_positive"
+        ],
+        "sponsor": {
+          "matched_name": "Example UK Limited",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:002:graduate",
+      "eval_id": "sample:002",
+      "job": {
+        "job_id": "sample:002",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Junior Operations Associate",
+        "employer_raw": "NoSponsor Solutions",
+        "description_text": "Applicants must have the right to work in the UK. We cannot provide visa sponsorship for this role.",
+        "location": "Leeds",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:002:needs_sponsorship",
+      "eval_id": "sample:002",
+      "job": {
+        "job_id": "sample:002",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Junior Operations Associate",
+        "employer_raw": "NoSponsor Solutions",
+        "description_text": "Applicants must have the right to work in the UK. We cannot provide visa sponsorship for this role.",
+        "location": "Leeds",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "ambiguous",
+          "no_sponsorship",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:003:graduate",
+      "eval_id": "sample:003",
+      "job": {
+        "job_id": "sample:003",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Graduate Consultant",
+        "employer_raw": "Northbridge Analytics",
+        "description_text": "Candidates must have the right to work in the UK now and in the future. The role may involve client travel.",
+        "location": "London",
+        "salary_text": "GBP 35,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "Northbridge Analytics Ltd",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:003:needs_sponsorship",
+      "eval_id": "sample:003",
+      "job": {
+        "job_id": "sample:003",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Graduate Consultant",
+        "employer_raw": "Northbridge Analytics",
+        "description_text": "Candidates must have the right to work in the UK now and in the future. The role may involve client travel.",
+        "location": "London",
+        "salary_text": "GBP 35,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "future_sponsorship_risk",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "Northbridge Analytics Ltd",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:004:graduate",
+      "eval_id": "sample:004",
+      "job": {
+        "job_id": "sample:004",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Policy Analyst",
+        "employer_raw": "Bright Future University",
+        "description_text": "British citizenship required due to funder restrictions. The role is based in Manchester.",
+        "location": "Manchester",
+        "salary_text": "GBP 31,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "citizenship_required",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "Bright Future University",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:004:needs_sponsorship",
+      "eval_id": "sample:004",
+      "job": {
+        "job_id": "sample:004",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Policy Analyst",
+        "employer_raw": "Bright Future University",
+        "description_text": "British citizenship required due to funder restrictions. The role is based in Manchester.",
+        "location": "Manchester",
+        "salary_text": "GBP 31,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "likely_blocked",
+        "evidence_categories": [
+          "citizenship_required",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "Bright Future University",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:005:graduate",
+      "eval_id": "sample:005",
+      "job": {
+        "job_id": "sample:005",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Junior Project Coordinator",
+        "employer_raw": "CareWorks Group",
+        "description_text": "The successful candidate may need SC clearance and five years UK residency for some client sites.",
+        "location": "Birmingham",
+        "salary_text": "GBP 30,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "security_clearance",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "CareWorks Group Limited",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:005:needs_sponsorship",
+      "eval_id": "sample:005",
+      "job": {
+        "job_id": "sample:005",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Junior Project Coordinator",
+        "employer_raw": "CareWorks Group",
+        "description_text": "The successful candidate may need SC clearance and five years UK residency for some client sites.",
+        "location": "Birmingham",
+        "salary_text": "GBP 30,000 per year",
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "verify_first",
+        "evidence_categories": [
+          "security_clearance",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": "CareWorks Group Limited",
+          "confidence_band": "high",
+          "is_match": true,
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:006:graduate",
+      "eval_id": "sample:006",
+      "job": {
+        "job_id": "sample:006",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Business Analyst Intern",
+        "employer_raw": "North Analytics",
+        "description_text": "This internship supports our operations team. Applicants should have the right to work in the UK.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "unknown",
+        "evidence_categories": [
+          "ambiguous",
+          "low_confidence_candidate"
+        ],
+        "sponsor": {
+          "matched_name": "Northbridge Analytics Ltd",
+          "confidence_band": "low",
+          "is_match": false,
+          "confidence": 0.792
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:006:needs_sponsorship",
+      "eval_id": "sample:006",
+      "job": {
+        "job_id": "sample:006",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Business Analyst Intern",
+        "employer_raw": "North Analytics",
+        "description_text": "This internship supports our operations team. Applicants should have the right to work in the UK.",
+        "location": "London",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "unknown",
+        "evidence_categories": [
+          "ambiguous",
+          "low_confidence_candidate"
+        ],
+        "sponsor": {
+          "matched_name": "Northbridge Analytics Ltd",
+          "confidence_band": "low",
+          "is_match": false,
+          "confidence": 0.792
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:007:graduate",
+      "eval_id": "sample:007",
+      "job": {
+        "job_id": "sample:007",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Graduate Research Assistant",
+        "employer_raw": "",
+        "description_text": "",
+        "location": "Remote",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "graduate_route",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": false,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "unknown",
+        "evidence_categories": [
+          "jd_phrase",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    },
+    {
+      "dataset": "labelled_jobs.sample.json",
+      "case_id": "sample:007:needs_sponsorship",
+      "eval_id": "sample:007",
+      "job": {
+        "job_id": "sample:007",
+        "source": "manual",
+        "source_job_id": null,
+        "title": "Graduate Research Assistant",
+        "employer_raw": "",
+        "description_text": "",
+        "location": "Remote",
+        "salary_text": null,
+        "salary_min": null,
+        "salary_max": null,
+        "posted_at": null,
+        "closing_at": null,
+        "fetched_at": null,
+        "url": null
+      },
+      "user_context": {
+        "visa_situation": "needs_sponsorship_before_start",
+        "visa_expiry_month": null,
+        "needs_sponsorship_before_start": true,
+        "needs_future_sponsorship": true,
+        "target_start_month": null
+      },
+      "expected": {
+        "label": "unknown",
+        "evidence_categories": [
+          "jd_phrase",
+          "sponsor_match"
+        ],
+        "sponsor": {
+          "matched_name": null,
+          "confidence_band": "none",
+          "is_match": false,
+          "confidence": 0.0
+        }
+      }
+    }
+  ]
+}

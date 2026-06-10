@@ -1,0 +1,73 @@
+[
+  {
+    "source": "sample",
+    "source_job_id": "grad-marketing-001",
+    "title": "Graduate Marketing Analyst",
+    "employer_raw": "Example Ltd",
+    "description_text": "Join our graduate programme in London. We welcome applications from candidates with the right to work in the UK. Visa sponsorship available for suitable Skilled Worker roles.",
+    "location": "London",
+    "salary_text": "GBP 32,000 per year",
+    "salary_min": 32000,
+    "salary_max": 32000,
+    "posted_at": "2026-06-04",
+    "closing_at": null,
+    "url": "https://example.test/jobs/grad-marketing-001"
+  },
+  {
+    "source": "sample",
+    "source_job_id": "ops-associate-001",
+    "title": "Junior Operations Associate",
+    "employer_raw": "NoSponsor Solutions",
+    "description_text": "Applicants must have the right to work in the UK. We cannot provide visa sponsorship for this role.",
+    "location": "Leeds",
+    "salary_text": null,
+    "salary_min": null,
+    "salary_max": null,
+    "posted_at": "2026-06-03",
+    "closing_at": null,
+    "url": "https://example.test/jobs/ops-associate-001"
+  },
+  {
+    "source": "sample",
+    "source_job_id": "grad-consultant-001",
+    "title": "Graduate Consultant",
+    "employer_raw": "Northbridge Analytics",
+    "description_text": "Candidates must have the right to work in the UK now and in the future. The role may involve client travel.",
+    "location": "London",
+    "salary_text": "GBP 35,000 per year",
+    "salary_min": 35000,
+    "salary_max": 35000,
+    "posted_at": "2026-06-02",
+    "closing_at": null,
+    "url": "https://example.test/jobs/grad-consultant-001"
+  },
+  {
+    "source": "sample",
+    "source_job_id": "grad-consultant-copy",
+    "title": "Graduate Consultant",
+    "employer_raw": "Northbridge Analytics Ltd",
+    "description_text": "Candidates must have the right to work in the UK now and in the future. The role may involve client travel.",
+    "location": "London",
+    "salary_text": "GBP 35,000 per year",
+    "salary_min": 35000,
+    "salary_max": 35000,
+    "posted_at": "2026-06-02",
+    "closing_at": null,
+    "url": "https://example.test/jobs/grad-consultant-copy"
+  },
+  {
+    "source": "sample",
+    "source_job_id": "security-role-001",
+    "title": "Junior Project Coordinator",
+    "employer_raw": "CareWorks Group",
+    "description_text": "The successful candidate may need SC clearance and five years UK residency for some client sites.",
+    "location": "Birmingham",
+    "salary_text": "GBP 30,000 per year",
+    "salary_min": 30000,
+    "salary_max": 30000,
+    "posted_at": "2026-06-01",
+    "closing_at": null,
+    "url": "https://example.test/jobs/security-role-001"
+  }
+]
+

@@ -1,0 +1,3492 @@
+{
+  "generated_at": "2026-06-05T14:53:09Z",
+  "source_runs": [
+    {
+      "source": "reed",
+      "status": "ok",
+      "fetched_count": 50,
+      "normalised_count": 50,
+      "error": null
+    },
+    {
+      "source": "adzuna",
+      "status": "ok",
+      "fetched_count": 0,
+      "normalised_count": 0,
+      "error": null
+    }
+  ],
+  "freshness_summary": {
+    "total": 49,
+    "fresh": 0,
+    "stale": 0,
+    "missing_date": 49
+  },
+  "jobs": [
+    {
+      "job_id": "reed:56950711",
+      "source": "reed",
+      "source_job_id": "56950711",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology Graduate looking to gain hands-on experience in education, mental health or child development? Are you considering a future career as a Psychologist, Counsellor, Therapist or Teacher? A welcoming Specialist School in Oxford is seeking a motivated and enthusiastic graduate to join their team ASAP and work as a Learning Support Assistant. This is an excellent opportunity to work closely with children who have a range of Specia...",
+      "description_hash": "3c39c076ce51b9a9b4308ce5b747d6e4197d12963ba05736556caadcba115e13",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Oxford",
+        "city": "Oxford",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "28/05/2026",
+        "closing_at": "09/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56950711",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "28/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56924388",
+      "source": "reed",
+      "source_job_id": "56924388",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a recent Psychology Graduate looking to gain hands-on experience in mental health, behaviour support and special education? Are you considering a future career in Clinical Psychology, Educational Psychology, Occupational Therapy or Counselling? If so, this full-time opportunity could be the ideal next step. A specialist school in Oxford is seeking a dedicated and enthusiastic graduate to join their team immediately as a SEMH Teaching Ass...",
+      "description_hash": "0ddb67ce25f3ee761e7b623f8e39601e47905f05d5f07a12bce7024ce4a029d9",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Oxford",
+        "city": "Oxford",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "20/05/2026",
+        "closing_at": "01/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56924388",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "20/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56907678",
+      "source": "reed",
+      "source_job_id": "56907678",
+      "title": "Criminology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Criminology Graduate - Learning Support Assistant - Mental Health & Trauma Support Are you a Criminology Graduate looking to start your career in mental health, education, youth justice, or clinical support? Do you want hands-on experience supporting vulnerable children? A specialist school in Reading is seeking a passionate and resilient graduate to join their team as a Learning Support Assistant, either immediately or in September. This is...",
+      "description_hash": "5f6c07239622cf8bbaf5a82ef7c001a712c4a76ef499cceb238e667ea71cac1f",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Reading",
+        "city": "Reading",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "15/05/2026",
+        "closing_at": "26/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/criminology-graduate/56907678",
+      "normalised": {
+        "title_tokens": [
+          "criminology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "15/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56842016",
+      "source": "reed",
+      "source_job_id": "56842016",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology Graduate looking to gain hands-on experience in mental health and special education? This full-time, long-term role in a specialist school for children with Autism and Complex Needs is ideal for a Psychology Graduate looking to develop practical skills in a therapeutic environment. You will work closely with children with a variety of special educational needs (SEN) and mental health challenges, providing you with invaluable...",
+      "description_hash": "7d2de7affe8137309ab2b57ec07fd95314514565e871ce3f0cfa0a6007d000aa",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Witney",
+        "city": "Witney",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "30/04/2026",
+        "closing_at": "11/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56842016",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "30/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56915006",
+      "source": "reed",
+      "source_job_id": "56915006",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology Graduate? Are you dreaming of a career as a Psychologist or Therapist, but need some experience behind you? Are you interested in neurodiversity and special needs? A Special Needs School in Banbury are looking for an enthusiastic Psychology Graduate to join their team as a Learning Support Assistant. This role offers a unique change to support children with diverse needs, including autism, speech and language needs, sensory ...",
+      "description_hash": "7be8414ceca60c04cb80e3e22282b710f9da169635726e570fe89724357bb475",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Banbury",
+        "city": "Banbury",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "18/05/2026",
+        "closing_at": "29/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56915006",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "18/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56914941",
+      "source": "reed",
+      "source_job_id": "56914941",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology Graduate looking to gain hands-on experience in education, mental health or child development? Are you considering a future career as a Psychologist, Counsellor, Therapist or Teacher? A welcoming Specialist School in Bicester is seeking a motivated and enthusiastic graduate to join their team ASAP and work as a Learning Support Assistant. This is an excellent opportunity to work closely with children who have a range of Spec...",
+      "description_hash": "7aa22f3a1030d405769529c008eab1d425013692eacfa06691225a009a034816",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Bicester",
+        "city": "Bicester",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "18/05/2026",
+        "closing_at": "29/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56914941",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "18/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56841734",
+      "source": "reed",
+      "source_job_id": "56841734",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology Graduate looking to gain hands-on experience in education, mental health or child development? Are you considering a future career as a Psychologist, Counsellor, Therapist or Teacher? A welcoming Specialist School in Oxford is seeking a motivated and enthusiastic graduate to join their team either ASAP or in September and work as a Learning Support Assistant. This is an excellent opportunity to work closely with children who...",
+      "description_hash": "c96ce34101f1a578e13224173eb9fb40fe2bdf97f745da0df3280d5a1435fcd2",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Oxford",
+        "city": "Oxford",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "30/04/2026",
+        "closing_at": "11/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56841734",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "30/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56844547",
+      "source": "reed",
+      "source_job_id": "56844547",
+      "title": "Phycology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology graduate looking to gain hands-on experience in a secondary school in Braintree? Are you interested in developing a career in education, educational psychology, or mental health support? Are you ready to take the first step on a clear progression pathway within a supportive and forward-thinking school? Braintree, Essex ASAP 2026 Secondary School - Graduate Cover Supervisor (Psychology Graduate) Monday - Friday, 8:30am-3:30pm...",
+      "description_hash": "17dd5be6861ce966a969d53cef00808bbaf4a80cf4b79e5218da0084a3718c6e",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Braintree",
+        "city": "Braintree",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 80.0 - 130.0 per year",
+        "min": 80,
+        "max": 130,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "30/04/2026",
+        "closing_at": "11/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/phycology-graduate/56844547",
+      "normalised": {
+        "title_tokens": [
+          "phycology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "30/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56879058",
+      "source": "reed",
+      "source_job_id": "56879058",
+      "title": "Maths Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Maths Graduate - Learning Support Assistant Location: Windsor Salary: Competitive, dependent on experience Contract: Full-time (term-time only), Fixed-term / Permanent We are seeking a dedicated and enthusiastic Maths Graduate to join our school as a Learning Support Assistant , supporting students within the classroom environment. This role is ideal for a recent graduate considering a future career in teaching, education, or educational psychol...",
+      "description_hash": "daf3ca72de3d12a001ab42ec08b59aba8bec5ca66ca81b050b3486ca2237e0ec",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Windsor",
+        "city": "Windsor",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 92.53 - 110.0 per year",
+        "min": 92,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "08/05/2026",
+        "closing_at": "19/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/maths-graduate/56879058",
+      "normalised": {
+        "title_tokens": [
+          "maths",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "08/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56847302",
+      "source": "reed",
+      "source_job_id": "56847302",
+      "title": "Criminology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you motivated by supporting and helping others? Are you passionate about demonstrating the value of education and learning to vulnerable groups of children? A Specialist Provision in Swindon that caters for students with mental health issues and behaviour challenges are looking for a Criminology Graduate to join their team as a Behaviour Support Assistant. This role will give you essential restorative experience within anti-social and challe...",
+      "description_hash": "d85399ddf054d55b0408600d056812726e004090b34fdf3db3675bb7532e1de2",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Swindon",
+        "city": "Swindon",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "01/05/2026",
+        "closing_at": "12/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/criminology-graduate/56847302",
+      "normalised": {
+        "title_tokens": [
+          "criminology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "01/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56915181",
+      "source": "reed",
+      "source_job_id": "56915181",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Students & Graduates - Make a Difference in Primary Schools! Are you studying psychology or recently graduated and eager to find hands-on experience that aligns with your degree and career ambitions? Academics is partnering with a number of primary schools across York, who are urgently seeking compassionate, motivated, and proactive individuals to support pupils with SEND and SEMH needs. Why this role is ideal for psychology stude...",
+      "description_hash": "5bebddbae45153ed52c9600996f834d3fba0f909c3f60de2c5cc1dc0d01e8009",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "York",
+        "city": "York",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 100.0 - 110.0 per year",
+        "min": 100,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "18/05/2026",
+        "closing_at": "29/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56915181",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "18/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56912179",
+      "source": "reed",
+      "source_job_id": "56912179",
+      "title": "Graduate Accountant",
+      "employer_raw": "Hiring People",
+      "description_text": "Start your career with one of the UK's leading accountancy networks UHY is a growing and successful international network of accountancy firms spanning 95 countries, with the UK group being a top 25 firm with over 20 offices across England, Wales and Northern Ireland. Our Birmingham office, established in 1989, is located in the heart of the Jewellery Quarter, just a short walk from the city centre and the Jewellery Quarter train station. Our pa...",
+      "description_hash": "842e8f582db6dd10cfae8305c38cc1474963a3293173f26e41d6edc7538670a2",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "B13ND",
+        "city": "B13ND",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 26500.0 - 26500.0 per year",
+        "min": 26500,
+        "max": 26500,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "18/05/2026",
+        "closing_at": "29/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-accountant/56912179",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "accountant"
+        ],
+        "employer_normalised": "hiring people"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Hiring People",
+          "matched_name": "Within People Ltd.",
+          "confidence": 0.731,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "London",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "18/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56988355",
+      "source": "reed",
+      "source_job_id": "56988355",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate Are you a Psychology graduate looking to gain meaningful, hands-on experience supporting children and young people with social, emotional and mental health (SEMH) needs before pursuing further training or postgraduate study? This is an excellent opportunity to develop your skills within a highly supportive specialist school in Windsor, working alongside experienced educators, therapists and mental health professionals. About ...",
+      "description_hash": "a79fd950e7a79126f53fe8fe171d1777c4434b037b1004a93b4a1003d3afb64b",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Windsor",
+        "city": "Windsor",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 110.0 per year",
+        "min": 90,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "05/06/2026",
+        "closing_at": "17/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56988355",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "05/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56843264",
+      "source": "reed",
+      "source_job_id": "56843264",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology Graduate looking to gain hands-on experience in education, mental health or child development? Are you considering a future career as a Psychologist, Counsellor, Therapist or Teacher? A welcoming Specialist School in Banbury is seeking a motivated and enthusiastic graduate to join their team either ASAP or in September and work as a Learning Support Assistant. This is an excellent opportunity to work closely with children wh...",
+      "description_hash": "18520c4d4d976367d54814e946fcb1f60135bfefcf39427c720f30f76f37e6d8",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Banbury",
+        "city": "Banbury",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "30/04/2026",
+        "closing_at": "11/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56843264",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "30/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56924370",
+      "source": "reed",
+      "source_job_id": "56924370",
+      "title": "Criminology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Criminology Graduate - Learning Support Assistant - Mental Health & Trauma Support Are you a Criminology Graduate looking to start your career in mental health, education, youth justice, or clinical support? Do you want hands-on experience supporting vulnerable children? A specialist school in Salisbury is seeking a passionate and resilient graduate to join their team as a Learning Support Assistant, either immediately or in September. This ...",
+      "description_hash": "7e02627b2b751b1d99bd231549b9141b39583a955c5388f9bc5e0a7de5d93b59",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Salisbury",
+        "city": "Salisbury",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "20/05/2026",
+        "closing_at": "01/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/criminology-graduate/56924370",
+      "normalised": {
+        "title_tokens": [
+          "criminology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "20/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56989518",
+      "source": "reed",
+      "source_job_id": "56989518",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate Crawley September 2026 Are you a psychology graduate looking for your first step on the ladder to progress into teaching or a therapy-focused role? A well established Crawley school for children aged 6-11 with ADHD and/or Autism are welcoming psychology graduate applicants who are able to demonstrate a good academic background, along with the characteristics of resilience, empathy, creativity and problem-solving. You will be ...",
+      "description_hash": "e71d1d2df5230d7cb104fb61da920f29b69167bbe517fc124131265a40f0407d",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Crawley",
+        "city": "Crawley",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 92.5 - 95.0 per year",
+        "min": 92,
+        "max": 95,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "05/06/2026",
+        "closing_at": "17/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56989518",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "05/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56915282",
+      "source": "reed",
+      "source_job_id": "56915282",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you a Psychology Graduate? Are you looking to build your experience supporting neurodivergent children facing mental health challenges? Are you looking for a full-time role that is both rewarding and enriching? An inclusive Specialist School for students with learning difficulties and mental health challenges are looking for a Graduate to join their team full-time starting as soon as next week. At this Chippenham School, you will play a vita...",
+      "description_hash": "6f11af5ca4d184909d75f0c9c2df84c692ab105c551df5988496a3a6a7ea412d",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Chippenham",
+        "city": "Chippenham",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "18/05/2026",
+        "closing_at": "29/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56915282",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "18/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56824637",
+      "source": "reed",
+      "source_job_id": "56824637",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate - Worthing - September 2026 Do you love working with children and thrive on seeing their progression? Are you a naturally resilient and empathetic person? Could you benefit from working school hours and with a regular ongoing shift pattern? This position could be exactly what you've been looking for! A specialist SEN school for children with autism and complex needs is welcoming a psychology graduate to join their expanding t...",
+      "description_hash": "bea6a6b1853578e80e2fa44218dea51acb8665661e4873876efee1200fcfe222",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Worthing",
+        "city": "Worthing",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 92.0 - 93.0 per year",
+        "min": 92,
+        "max": 93,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "24/04/2026",
+        "closing_at": "05/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56824637",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "24/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56824152",
+      "source": "reed",
+      "source_job_id": "56824152",
+      "title": "Graduate Surveyor",
+      "employer_raw": "Diamond & Co",
+      "description_text": "GRADUATE BUILDING SURVEYOR \u2022Diamond & Co \u2022 Competitive, aligned to experience \u2022 Glasgow / Hybrid ROLE OVERVIEW We are looking for a Graduate Building Surveyor to join a fast-growing Building Consultancy team, working across a diverse residential-led portfolio. From day one, you\u2019ll gain hands-on exposure to live instructions across defect diagnosis, planned maintenance, project delivery and building safety. You\u2019ll work alongside experienced s...",
+      "description_hash": "074569d604fae473b72366905a2513c8582852e27efed66970e97c3dde5497f4",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "G21DU",
+        "city": "G21DU",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": null,
+        "min": null,
+        "max": null,
+        "currency": null,
+        "period": null,
+        "is_missing": true
+      },
+      "dates": {
+        "posted_at": "24/04/2026",
+        "closing_at": "03/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-surveyor/56824152",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "surveyor"
+        ],
+        "employer_normalised": "diamond and"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Diamond & Co",
+          "matched_name": "APEX JEWELLERS LTD T/A ASPIRE, DIAMOND HEAVEN AND DIAMOND QUARTER",
+          "confidence": 0.86,
+          "confidence_band": "medium",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "BIRMINGHAM",
+          "is_match": true,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "Sponsor-register presence does not prove this specific role will be sponsored.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "24/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56826608",
+      "source": "reed",
+      "source_job_id": "56826608",
+      "title": "Psychology Graduate",
+      "employer_raw": "Academics",
+      "description_text": "Are you looking to go into a career in Education/Child psychology or speech and language therapy, but need to gain crucial experience beforehand? Have you considered using your psychology degree to gain classroom-based experience working with SEN students? Do you have a genuine passion for special educational needs and perhaps the drive to become a SEN teacher? A Special school (SEN) in Hackney, which caters for pupils with a range of needs, inc...",
+      "description_hash": "d3f0e1b99c1d8eadd7797e66b45ca0e3830556d0dc39cd639c0a3384f46467ee",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "East London",
+        "city": "East London",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 100.0 - 110.0 per year",
+        "min": 100,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "26/04/2026",
+        "closing_at": "07/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate/56826608",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "26/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56852399",
+      "source": "reed",
+      "source_job_id": "56852399",
+      "title": "Graduate Surveyor",
+      "employer_raw": "SRVO",
+      "description_text": "GRADUATE BUILDING SURVEYOR \u2022SRVO \u2022 Competitive, aligned to experience \u2022 Hybrid - London / South ROLE OVERVIEW We are looking for a Graduate Building Surveyor to join a fast-growing and highly active Building Consultancy team, working across a diverse residential-led portfolio. From day one, you\u2019ll gain hands-on exposure to live instructions across defect diagnosis, planned maintenance, project delivery and building safety. You\u2019ll work alongside ...",
+      "description_hash": "129a07ef4eb2f6fbd2c3082d105b59681ff7ef82e7fd96c84f8eaffd286adc4b",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "WC2N5HS",
+        "city": "WC2N5HS",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": null,
+        "min": null,
+        "max": null,
+        "currency": null,
+        "period": null,
+        "is_missing": true
+      },
+      "dates": {
+        "posted_at": "01/05/2026",
+        "closing_at": "03/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-surveyor/56852399",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "surveyor"
+        ],
+        "employer_normalised": "srvo"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "SRVO",
+          "matched_name": "Qorvo UK Ltd",
+          "confidence": 0.633,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Global Business Mobility: Senior or Specialist Worker",
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Theale",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "01/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56893941",
+      "source": "reed",
+      "source_job_id": "56893941",
+      "title": "Graduate Valuer",
+      "employer_raw": "Christie & Co",
+      "description_text": "Graduate Valuer Location: Birmingham Base salary: 28,000 - 30,000 About Christie & Co We are the leading specialist advisor and broker for buying and selling businesses in our sectors - hotels, pubs, restaurants, childcare & education, healthcare, retail, leisure and medical. Christie & Co offer agency, valuations and consultancy services across all our offices, as well Finance and Insurance, across our sister companies. ...",
+      "description_hash": "b647f445fa65b33bb6f6d3a0ec080940316b33afb4e07de301df28f8c644b51a",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Birmingham",
+        "city": "Birmingham",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 28000.0 - 30000.0 per year",
+        "min": 28000,
+        "max": 30000,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "12/05/2026",
+        "closing_at": "23/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-valuer/56893941",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "valuer"
+        ],
+        "employer_normalised": "christie and"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Christie & Co",
+          "matched_name": "Christie Owen & Davies Limited",
+          "confidence": 0.86,
+          "confidence_band": "medium",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "London",
+          "is_match": true,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "Sponsor-register presence does not prove this specific role will be sponsored.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "12/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56946233",
+      "source": "reed",
+      "source_job_id": "56946233",
+      "title": "Graduate Sales",
+      "employer_raw": "Bechtle UK",
+      "description_text": "As an Account Executive, you will be responsible for finding and maintaining the relationship with key customers and ensuring their technology requirements are met. Our Account Executives are the face of Bechtle, the people our customers go to for advice and guidance and consistently deliver excellent levels of service. Job Role Responsibilities Treat as your own business Prospecting \u2013 cold calling, emailing, LinkedIn activity, thinking outside ...",
+      "description_hash": "fe95933aabd06f1281b6ca9a3a19e64f5661598cc844cb2bfe78204bbd86330a",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "SN140GF",
+        "city": "SN140GF",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 25000.0 - 27000.0 per year",
+        "min": 25000,
+        "max": 27000,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "27/05/2026",
+        "closing_at": "08/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-sales/56946233",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "sales"
+        ],
+        "employer_normalised": "bechtle"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Bechtle UK",
+          "matched_name": "Bechtel Limited",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker",
+            "Global Business Mobility: Senior or Specialist Worker"
+          ],
+          "rating": "A",
+          "location": "London",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "27/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56858564",
+      "source": "reed",
+      "source_job_id": "56858564",
+      "title": "PGCE Graduates",
+      "employer_raw": "Academics",
+      "description_text": "Have you completed your Secondary teaching course and are not sure what to do next? Academics can help! Academics work closely with many Early Careers Teacher's to help find the work they are looking for. Working in many of our local secondary schools across the North and North East Lincolnshire area you will be able to build strong links within our schools which makes you appealing to future employers. What Academics can offer; * Regular work a...",
+      "description_hash": "996e2e51ad64d11b592053a1e2d1a3742c22f22565b7edd38c93d0a88e07f6d7",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Scunthorpe",
+        "city": "Scunthorpe",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 33600.0 - 38400.0 per year",
+        "min": 33600,
+        "max": 38400,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "05/05/2026",
+        "closing_at": "16/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/pgce-graduates/56858564",
+      "normalised": {
+        "title_tokens": [
+          "pgce",
+          "graduates"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "05/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56847236",
+      "source": "reed",
+      "source_job_id": "56847236",
+      "title": "Psychology Graduate - Reading",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate - Reading Location: Reading Start Date: ASAP Pay: 90 - 105 per day Are you a motivated Psychology Graduate looking to gain hands-on experience supporting young people in an educational setting? A forward-thinking and inclusive school in Reading is seeking a Psychology Graduate to join their team as soon as possible. This is an excellent opportunity for a Psychology Graduate to build practical experience working with students ...",
+      "description_hash": "c20b0b51df407db555ab6313c142ad9b537b40a854bf4d93ea72d971d082458a",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Reading",
+        "city": "Reading",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 105.0 per year",
+        "min": 90,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "01/05/2026",
+        "closing_at": "12/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-reading/56847236",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "reading"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "01/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56905337",
+      "source": "reed",
+      "source_job_id": "56905337",
+      "title": "Psychology Graduate - Oxford",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate - SEN & Mental Health Support Perfect for Aspiring Psychologists - Oxford Are you a Psychology Graduate looking to gain hands-on experience in mental health and special education ? This full-time, long-term role in a specialist school for children with Autism and Complex Needs is perfect for a Psychology Graduate eager to develop practical skills in a therapeutic setting . You will gain invaluable experience working with ...",
+      "description_hash": "dc21f60c37affadb3924bed20c47cf3828b761ae1fe344bcc2705be30eab1edd",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Oxford",
+        "city": "Oxford",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 105.0 per year",
+        "min": 90,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "15/05/2026",
+        "closing_at": "26/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-oxford/56905337",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "oxford"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "15/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56906806",
+      "source": "reed",
+      "source_job_id": "56906806",
+      "title": "Graduate Classroom Assistant",
+      "employer_raw": "Academics",
+      "description_text": "Graduate Classroom Assistant - Swindon Full-time & Part-time Opportunities | Term Time Only ASAP Start Swindon 90 - 105 per day Are you a recent graduate looking to gain hands-on experience in education? Are you considering a future career in teaching, educational psychology, or youth work? A welcoming and inclusive school in Swindon is seeking a motivated and enthusiastic Graduate Classroom Assistant to join their supportive team. This is a...",
+      "description_hash": "cf737abd34ac64a0710524a204d46a044b16a9a5341972c7fa96b539f46c85f4",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Swindon",
+        "city": "Swindon",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 105.0 per year",
+        "min": 90,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "15/05/2026",
+        "closing_at": "26/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-classroom-assistant/56906806",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "classroom",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "15/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56892535",
+      "source": "reed",
+      "source_job_id": "56892535",
+      "title": "Graduate Classroom Assistant",
+      "employer_raw": "Academics",
+      "description_text": "Graduate Classroom Assistant - Cheltenham Full-time & Part-time Opportunities | Term Time Only ASAP Start Cheltenham 90 - 105 per day Are you a recent graduate looking to gain hands-on experience in education? Are you considering a future career in teaching, educational psychology, or youth work? A welcoming and inclusive school in Cheltenham is seeking a motivated and enthusiastic Graduate Classroom Assistant to join their supportive team. ...",
+      "description_hash": "ceef3c97b53a786482606a27e41d3727896f9f52d56230d066ca83f3cae2ee84",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Cheltenham",
+        "city": "Cheltenham",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 105.0 per year",
+        "min": 90,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "12/05/2026",
+        "closing_at": "23/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-classroom-assistant/56892535",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "classroom",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "12/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56889860",
+      "source": "reed",
+      "source_job_id": "56889860",
+      "title": "Psychology Graduate - Reading",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate Teaching Assistant - Reading Location: Reading, Berkshire Start Date: ASAP Pay Scale: 90.00 - 105.00 per day Are you a Psychology graduate looking to gain practical experience supporting children with additional needs? Do you aspire to work in educational psychology, clinical psychology, therapy, or mental health support in the future? A welcoming and inclusive SEN School in Reading is seeking a dedicated Psychology Graduate ...",
+      "description_hash": "397ee4319895dce77ad1e06b9cfc5ed913fdbd1dac6c1d9feccaf4b565753fa7",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Reading",
+        "city": "Reading",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 105.0 per year",
+        "min": 90,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "12/05/2026",
+        "closing_at": "23/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-reading/56889860",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "reading"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "12/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56928484",
+      "source": "reed",
+      "source_job_id": "56928484",
+      "title": "Graduate Behaviour Mentor",
+      "employer_raw": "Academics",
+      "description_text": "Are you a graduate with a passion for helping others? Have you considered a career within Criminal Justice or Probation but don't know where to start? This could be the first step to your dream career! A Specialist Provision in Reading are looking for a Graduate to work as a Behaviour Mentor, and support their pupils who face emotional and behavioural challenges. You will be based in the classroom, helping students overcome obstacles to their ed...",
+      "description_hash": "736f45861d152ecfd65d85078ad2921e9a10412e011d548c334b32c799aacbca",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Reading",
+        "city": "Reading",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "21/05/2026",
+        "closing_at": "02/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-behaviour-mentor/56928484",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "behaviour",
+          "mentor"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "21/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56892863",
+      "source": "reed",
+      "source_job_id": "56892863",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Reeson Education",
+      "description_text": "Graduate Teaching Assistant | Waltham Forest | 82.14 - 100 per day | Term Time | Immediate Start Available Reeson Education is recruiting an enthusiastic Graduate Teaching Assistant to join a welcoming primary school in Waltham Forest . This is an excellent opportunity for a motivated Graduate Teaching Assistant looking to gain valuable classroom experience before progressing into a career in teaching or educational psychology. The school is bas...",
+      "description_hash": "ccaaa787365c9dcf19742fc127f30b72f636817f69c5c25babf799de4040910c",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "E179JE",
+        "city": "E179JE",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 82.14 - 100.0 per year",
+        "min": 82,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "12/05/2026",
+        "closing_at": "23/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56892863",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "reeson education"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Reeson Education",
+          "matched_name": "Eyesto Education Limited",
+          "confidence": 0.831,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Cardiff, Wales",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "12/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56892861",
+      "source": "reed",
+      "source_job_id": "56892861",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Reeson Education",
+      "description_text": "Graduate Teaching Assistant | Havering | 82.14 - 100 per day | Term Time | Immediate Start Reeson Education is currently recruiting a passionate Graduate Teaching Assistant to work within a supportive primary school in Havering . This role is ideal for a motivated Graduate Teaching Assistant looking to gain valuable classroom experience while supporting pupils with their learning and development. The school is located in Havering , with easy acc...",
+      "description_hash": "d33600b3efc2f3540346fc2097a9a5021498241bdf2d955e0a3e152945c0fb9a",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "RM112SP",
+        "city": "RM112SP",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 82.14 - 100.0 per year",
+        "min": 82,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "12/05/2026",
+        "closing_at": "23/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56892861",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "reeson education"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Reeson Education",
+          "matched_name": "Eyesto Education Limited",
+          "confidence": 0.831,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Cardiff, Wales",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "12/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56983675",
+      "source": "reed",
+      "source_job_id": "56983675",
+      "title": "Psychology Graduate - Oxford",
+      "employer_raw": "Academics",
+      "description_text": "SEN Teaching Assistant (Psychology Graduates Required!) Oxford- Primary and Secondary SEMH School ASAP Start An 'outstanding' co-educational Special School in Oxford currently recruiting for Specialist TA's to join them. They offer schooling for children between 5 and 16 years with social, emotional and mental health needs. The school specialises in not only providing integrated education, but therapeutic support for every child with a significa...",
+      "description_hash": "01dc00b2c8c1a465d18739166adcbde40994f1f7997ae23a83ba093589fa5d90",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Oxford",
+        "city": "Oxford",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 85.0 - 105.0 per year",
+        "min": 85,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "04/06/2026",
+        "closing_at": "16/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-oxford/56983675",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "oxford"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "04/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56983673",
+      "source": "reed",
+      "source_job_id": "56983673",
+      "title": "Psychology Graduate - Wantage",
+      "employer_raw": "Academics",
+      "description_text": "SEN Teaching Assistant (Psychology Graduates Required!) Wantage- Primary and Secondary SEMH School ASAP Start An 'outstanding' co-educational Special School in Wantage currently recruiting for Specialist TA's to join them. They offer schooling for children between 5 and 16 years with social, emotional and mental health needs. The school specialises in not only providing integrated education, but therapeutic support for every child with a signifi...",
+      "description_hash": "816bd23c895f729089c7e139b245b5da03ebd7174ba53f1f5e6071d30a6e81c5",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Wantage",
+        "city": "Wantage",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 85.0 - 105.0 per year",
+        "min": 85,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "04/06/2026",
+        "closing_at": "16/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-wantage/56983673",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "wantage"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "04/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56902311",
+      "source": "reed",
+      "source_job_id": "56902311",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Academics",
+      "description_text": "Are you a graduate looking to build a successful career in education? Would you like to gain invaluable classroom experience before progressing into teacher training? Are you passionate about supporting children's learning, development, and wellbeing? A welcoming and high-achieving primary school in Westminster, Central London is seeking a motivated and enthusiastic Graduate Teaching Assistant to join their team from September 2026 . This is an ...",
+      "description_hash": "0fa958cfc5e3636a7d0edfd2acf705ea7ce03e7da6dc8b8e223fb5294cfbdaee",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "South West London",
+        "city": "South West London",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 95.0 - 97.0 per year",
+        "min": 95,
+        "max": 97,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "14/05/2026",
+        "closing_at": "25/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56902311",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "14/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56871766",
+      "source": "reed",
+      "source_job_id": "56871766",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Reeson Education",
+      "description_text": "Graduate Teaching Assistant - Barking and Dagenham - September 2026 Full-time Graduate Teaching Assistant required Special Needs School Support students with Autism and Severe Learning Disabilities Welcoming and diverse staff team Barking and Dagenham - good transport + parking Monday - Friday 8.30am - 4.00pm Training and progression opportunities Seeking ambitious future teachers! An excellent School in Barking and Dagenham with multiple sites ...",
+      "description_hash": "1ba2cfe362223e63a57bfb0fc60b87b8a3bbb8528caa76dcc5210c8e9bceed68",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "IG110HZ",
+        "city": "IG110HZ",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 21060.0 - 25200.0 per year",
+        "min": 21060,
+        "max": 25200,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "07/05/2026",
+        "closing_at": "18/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56871766",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "reeson education"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Reeson Education",
+          "matched_name": "Eyesto Education Limited",
+          "confidence": 0.831,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Cardiff, Wales",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "07/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56937406",
+      "source": "reed",
+      "source_job_id": "56937406",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Academics",
+      "description_text": "Graduate Teaching Assistant - Aspiring Primary Teacher - Hammersmith & Fulham - September 2026 Start Are you passionate about pursuing a career in primary education and looking for a Teaching assistant role for September? Would you like to gain valuable classroom experience in a supportive and welcoming primary school? Are you interested in a Graduate Teaching Assistant role with opportunities to progress into teacher training? Academics is ...",
+      "description_hash": "382608f3eb5aab00993d56f172115c9b872c10d82793a308cb32ffbdf865f216",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "West London",
+        "city": "West London",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 95.0 - 98.0 per year",
+        "min": 95,
+        "max": 98,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "22/05/2026",
+        "closing_at": "03/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56937406",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "22/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56887777",
+      "source": "reed",
+      "source_job_id": "56887777",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Reeson Education",
+      "description_text": "Calling all graduates! Work opportunities in September 2026. Are you a childcare or psychology graduate with a passion for supporting children with special educational needs? Are you considering a career in educational or clinical psychology and want hands-on experience working in a school environment? Looking for a meaningful role where you can apply your knowledge and develop key skills that will support your future career? If so, this Graduat...",
+      "description_hash": "41b6179bacbc67959a43afe3af1f332675b93d30ff4bd00633d4d70e2d280031",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "NW108PP",
+        "city": "NW108PP",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 100.0 - 110.0 per year",
+        "min": 100,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "11/05/2026",
+        "closing_at": "22/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56887777",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "reeson education"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Reeson Education",
+          "matched_name": "Eyesto Education Limited",
+          "confidence": 0.831,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Cardiff, Wales",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "11/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56937348",
+      "source": "reed",
+      "source_job_id": "56937348",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Academics",
+      "description_text": "An Ofsted rated 'Outstanding' Primary school based in Westminster are looking for a number of graduates to join their school from September 2026. 37.5 hours per week, Term Time only Fixed Term - 1 Academic Year September 2026 Start Borough of Westminster Full Training Provided 2 Form Entry Primary School 5 x Graduate Teaching Assistant Role Location: Westminster, Inner London Required for September 2026 Do you aspire to be an outstanding teacher...",
+      "description_hash": "80043493328cbeb0e88020677abc5bffcec00ca28594eab92f34754fca6afb9a",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "South West London",
+        "city": "South West London",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 23040.0 - 26400.0 per year",
+        "min": 23040,
+        "max": 26400,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "22/05/2026",
+        "closing_at": "03/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56937348",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "22/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56906392",
+      "source": "reed",
+      "source_job_id": "56906392",
+      "title": "Graduate Teaching assistant",
+      "employer_raw": "Academics",
+      "description_text": "Graduate Teaching Assistant - Primary School - Islington - September 2026 Start Are you looking to build a career in education this September 2026? Would you like to gain hands-on classroom experience in a supportive and welcoming primary school? Are you interested in a paid Graduate Teaching Assistant position with a pathway into teacher training? General Classroom Support + SEN Opportunities 95- 100 per day (depending on experience) Full-time ...",
+      "description_hash": "995e11500beda0a3dbcaa431b46cbe065c26f4f1f917fe73afef7fd63cf693ce",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "North London",
+        "city": "North London",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 95.0 - 100.0 per year",
+        "min": 95,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "15/05/2026",
+        "closing_at": "26/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56906392",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "15/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56821628",
+      "source": "reed",
+      "source_job_id": "56821628",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Reeson Education",
+      "description_text": "Graduate Teaching Assistant - Islington Full-time Graduate Teaching Assistant required 1 Year contract Secondary Successful and popular School London borough of Islington Competitie daily rate An excellent School in Islington with multiple sites is looking to take on Graduate Teaching Assistants. Graduate Teaching Assistant - The Role: You will work with lower ability and SEN pupils in Secondary key stages - supporting across a wide range of sub...",
+      "description_hash": "27424773cb0326564bae29841e5b2b9c39171fa8ad90d5be22971cb983384771",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "N79BA",
+        "city": "N79BA",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 110.0 per year",
+        "min": 90,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "24/04/2026",
+        "closing_at": "05/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56821628",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "reeson education"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Reeson Education",
+          "matched_name": "Eyesto Education Limited",
+          "confidence": 0.831,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Cardiff, Wales",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "24/04/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56876987",
+      "source": "reed",
+      "source_job_id": "56876987",
+      "title": "Graduate Teaching assistant",
+      "employer_raw": "Academics",
+      "description_text": "Graduate Teaching Assistant - Primary School - Westminster - September 2026 Start Are you looking to build a career in education this September 2026? Would you like to gain hands-on classroom experience in a supportive and welcoming primary school? Are you interested in a paid Graduate Teaching Assistant position with a pathway into teacher training? General Classroom Support + SEN Opportunities 95- 100 per day (depending on experience) Full-tim...",
+      "description_hash": "88ca3a200de3d3d2d57e32150c93af2a78a5d3c5b687391c5afbea02dc8515bf",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "South West London",
+        "city": "South West London",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 95.0 - 100.0 per year",
+        "min": 95,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "08/05/2026",
+        "closing_at": "19/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56876987",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "08/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56945936",
+      "source": "reed",
+      "source_job_id": "56945936",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Reeson Education",
+      "description_text": "Are you looking for an opportunity to make a difference in the lives of children with special needs? Reeson Education is currently recruiting for multiple Graduate Teaching Assistant positions to work with special needs schools in Kingston Upon Thames. Whether you're an entry-level graduate or an experienced TA, we have a position for you! Benefits of working with us: - Competitive pay rates - Part time, full time and long term roles available -...",
+      "description_hash": "e1eb2d91b340addd303a63ef197d742984b2ddf63f51eef7cfc8055f69196266",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "KT58JW",
+        "city": "KT58JW",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 100.0 per year",
+        "min": 90,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "27/05/2026",
+        "closing_at": "08/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56945936",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "reeson education"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Reeson Education",
+          "matched_name": "Eyesto Education Limited",
+          "confidence": 0.831,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Cardiff, Wales",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "27/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56878247",
+      "source": "reed",
+      "source_job_id": "56878247",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Reeson Education",
+      "description_text": "Are you a graduate considering a career in teaching and looking to gain valuable classroom experience? We are currently recruiting Graduate Teaching Assistants to work on a flexible supply basis across a range of welcoming primary schools in Camden. This role is ideal for graduates looking for part-time work that can fit around other commitments, whilst building hands-on experience within education. Working across different schools will allow yo...",
+      "description_hash": "ae21466dcdd01daaa6d222cc0917d32cf9e3c4e071effc6ff75bed9b699eb05d",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "NW18JS",
+        "city": "NW18JS",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 85.0 - 100.0 per year",
+        "min": 85,
+        "max": 100,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "08/05/2026",
+        "closing_at": "05/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56878247",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "reeson education"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Reeson Education",
+          "matched_name": "Eyesto Education Limited",
+          "confidence": 0.831,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Cardiff, Wales",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "08/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56988361",
+      "source": "reed",
+      "source_job_id": "56988361",
+      "title": "Psychology Graduate - Oxford",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate - Oxford Are you a Psychology graduate looking to gain meaningful, hands-on experience supporting children and young people with social, emotional and mental health (SEMH) needs before pursuing further training or postgraduate study? This is an excellent opportunity to develop your skills within a highly supportive specialist school in Oxford, working alongside experienced educators, therapists and mental health professionals...",
+      "description_hash": "d4c8253e97b6033f466c909c84ff98de4d0480938eb2cae81aad0ac25be99cfa",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Oxford",
+        "city": "Oxford",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 110.0 per year",
+        "min": 90,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "05/06/2026",
+        "closing_at": "17/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-oxford/56988361",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "oxford"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "05/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56977597",
+      "source": "reed",
+      "source_job_id": "56977597",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Academics",
+      "description_text": "Graduate Teaching Assistant - Long-Term Supply Role, West London, Immediate Start We are recruiting a Graduate Teaching Assistant for long-term supply opportunities in well-established secondary schools across West London. This is an excellent opportunity for motivated graduates looking to gain valuable classroom experience and further develop their skills within supportive school settings. These roles are ideal for graduates considering a futur...",
+      "description_hash": "d9ededd541e9d9be4b490cdd525cd43b7c623f4206efd47cfe271097981bb8fd",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "West London",
+        "city": "West London",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 95.0 - 125.0 per year",
+        "min": 95,
+        "max": 125,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "03/06/2026",
+        "closing_at": "15/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56977597",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "03/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56866444",
+      "source": "reed",
+      "source_job_id": "56866444",
+      "title": "Graduate Teaching Assistant",
+      "employer_raw": "Academics",
+      "description_text": "Graduate Teaching Assistant - Swindon Full-time & Part-time Opportunities | Term Time Only ASAP Start Swindon 90 - 105 per day Are you a recent graduate looking to gain hands-on experience in education? Are you considering a future career in teaching, educational psychology, or youth work? A welcoming and inclusive school in Swindon is seeking a motivated and enthusiastic Graduate Teaching Assistant to join their supportive team. This is an ...",
+      "description_hash": "1f2c7f5f7e58c0ae055af5263619fc3e3721d42c8c81dd47db98493aa991754f",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Swindon",
+        "city": "Swindon",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 105.0 per year",
+        "min": 90,
+        "max": 105,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "06/05/2026",
+        "closing_at": "17/06/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/graduate-teaching-assistant/56866444",
+      "normalised": {
+        "title_tokens": [
+          "graduate",
+          "teaching",
+          "assistant"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "06/05/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56983752",
+      "source": "reed",
+      "source_job_id": "56983752",
+      "title": "Psychology Graduate - Maidenhead",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate SEN Teaching Assistant in a Trauma/Mental Health School Are you interested in supporting children with adverse childhood experiences and trauma? Would you like to build your experience working with Complex Learning Disabilities? One of the top schools for students with Social, Emotional and Mental Health needs are looking for a Psychology Graduate to work as a SEN Teaching Assistant to support children with complex mental hea...",
+      "description_hash": "c43a7f13152a7a5146032bf8e640b79e964e970c94dbbb2705a97d720840b467",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Maidenhead",
+        "city": "Maidenhead",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 110.0 per year",
+        "min": 90,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "04/06/2026",
+        "closing_at": "16/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-maidenhead/56983752",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "maidenhead"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "04/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    },
+    {
+      "job_id": "reed:56983748",
+      "source": "reed",
+      "source_job_id": "56983748",
+      "title": "Psychology Graduate - Ascot",
+      "employer_raw": "Academics",
+      "description_text": "Psychology Graduate Mental Health Support Assistant Fantastic Opportunity for Aspiring Psychologist Occupational/Speech and Language/CBT Therapists Ascot Psychology Graduate Start Date - ASAP starts Oxford SEN - 90- 110 a day Do you have the skills to fill this role? Read the complete details below, and make your application today. Are you an Aspiring Therapist looking to gain critical experience working with complex needs? Have you recently gra...",
+      "description_hash": "bae9ffdd65f4306a63f8fb274d7ca3995a6a0ae1e4457115ad87025c51f9259a",
+      "description_scope": "excerpt",
+      "location": {
+        "raw": "Ascot",
+        "city": "Ascot",
+        "country": "UK",
+        "remote_type": "unknown"
+      },
+      "salary": {
+        "raw": "GBP 90.0 - 110.0 per year",
+        "min": 90,
+        "max": 110,
+        "currency": "GBP",
+        "period": "year",
+        "is_missing": false
+      },
+      "dates": {
+        "posted_at": "04/06/2026",
+        "closing_at": "16/07/2026",
+        "fetched_at": "2026-06-05T14:53:09Z"
+      },
+      "url": "https://www.reed.co.uk/jobs/psychology-graduate-ascot/56983748",
+      "normalised": {
+        "title_tokens": [
+          "psychology",
+          "graduate",
+          "-",
+          "ascot"
+        ],
+        "employer_normalised": "academics"
+      },
+      "visa_signals": {
+        "employer_match": {
+          "raw": "Academics",
+          "matched_name": "ACADEMICIANS LTD",
+          "confidence": 0.857,
+          "confidence_band": "low",
+          "match_method": "token_set",
+          "sponsor_routes": [
+            "Skilled Worker"
+          ],
+          "rating": "A",
+          "location": "Wednesbury, West midlands",
+          "is_match": false,
+          "source_name": "GOV.UK Register of Licensed Sponsors",
+          "source_published_at": null,
+          "source_downloaded_at": null
+        },
+        "phrase_signals": [],
+        "base_limitations": [
+          "This is a visa-risk triage label, not legal or immigration advice.",
+          "The engine only uses loaded sponsor-register data and phrases found in the job text.",
+          "No reliable sponsor-register match in the loaded data does not prove the employer lacks a licence.",
+          "Only a description excerpt was stored; phrase scanning may not cover the full job ad."
+        ]
+      },
+      "freshness": {
+        "posted_at": "04/06/2026",
+        "age_days": null,
+        "has_posted_date": false,
+        "stale_after_days": 30,
+        "is_stale": false,
+        "needs_review": true
+      }
+    }
+  ]
+}

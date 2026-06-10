@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Dark mode driven by a `.dark` class on <html> (toggled in the app shell). */
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design tokens — friendly & calm: soft neutrals, generous spacing, clear type.
+ * Values are HSL channels so we can compose with Tailwind's color opacity.
+ * Label colours are colour-blind safe and always paired with text in the UI.
+ */
+:root {
+  --background: 210 40% 98%;
+  --foreground: 222 30% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 30% 16%;
+  --muted: 214 32% 95%;
+  --muted-foreground: 215 16% 42%;
+  --border: 214 25% 88%;
+  --input: 214 25% 88%;
+  --ring: 221 70% 55%;
+  --primary: 221 70% 48%;
+  --primary-foreground: 210 40% 98%;
+  --accent: 214 32% 93%;
+  --accent-foreground: 222 30% 16%;
+
+  /* Label palette (calm, accessible). */
+  --label-worth: 152 45% 35%;
+  --label-worth-bg: 152 50% 94%;
+  --label-verify: 38 80% 38%;
+  --label-verify-bg: 42 90% 93%;
+  --label-blocked: 350 55% 45%;
+  --label-blocked-bg: 350 70% 95%;
+  --label-unknown: 215 16% 42%;
+  --label-unknown-bg: 214 25% 93%;
+
+  --radius: 0.7rem;
+}
+
+.dark {
+  --background: 222 32% 11%;
+  --foreground: 210 30% 92%;
+  --card: 222 28% 14%;
+  --card-foreground: 210 30% 92%;
+  --muted: 217 25% 19%;
+  --muted-foreground: 215 18% 65%;
+  --border: 217 22% 24%;
+  --input: 217 22% 24%;
+  --ring: 221 70% 60%;
+  --primary: 221 75% 62%;
+  --primary-foreground: 222 32% 11%;
+  --accent: 217 25% 22%;
+  --accent-foreground: 210 30% 92%;
+
+  --label-worth: 152 45% 62%;
+  --label-worth-bg: 152 35% 18%;
+  --label-verify: 42 85% 62%;
+  --label-verify-bg: 38 45% 18%;
+  --label-blocked: 350 70% 70%;
+  --label-blocked-bg: 350 40% 20%;
+  --label-unknown: 215 18% 68%;
+  --label-unknown-bg: 217 20% 22%;
+}
+
+/* Expose tokens to Tailwind utilities (bg-background, text-foreground, ...). */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 0.2rem);
+  --radius-sm: calc(var(--radius) - 0.35rem);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  margin: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

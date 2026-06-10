@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "jobId": 10001,
+      "jobTitle": "Graduate Data Analyst",
+      "employerName": "Northbridge Analytics",
+      "jobDescription": "<p>Join our graduate analytics team in London. Visa sponsorship may be available for suitable Skilled Worker roles. You must have the right to work in the UK at the point of hire.</p>",
+      "locationName": "London",
+      "minimumSalary": 33000,
+      "maximumSalary": 36000,
+      "date": "2026-06-04T08:00:00Z",
+      "expirationDate": "2026-07-04",
+      "jobUrl": "https://reed.example.test/jobs/10001"
+    }
+  ]
+}

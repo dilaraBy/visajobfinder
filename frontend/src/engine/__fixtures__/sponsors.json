@@ -1,0 +1,78 @@
+{
+  "source": {
+    "source_name": "GOV.UK Register of Licensed Sponsors",
+    "source_published_at": null,
+    "downloaded_at": null
+  },
+  "records": [
+    {
+      "organisation_name": "Example UK Limited",
+      "sponsor_routes": [
+        "Skilled Worker"
+      ],
+      "rating": "A",
+      "location": "London",
+      "aliases": [
+        "Example Ltd",
+        "Example"
+      ]
+    },
+    {
+      "organisation_name": "Northbridge Analytics Ltd",
+      "sponsor_routes": [
+        "Skilled Worker"
+      ],
+      "rating": "A",
+      "location": "London",
+      "aliases": [
+        "Northbridge Analytics",
+        "Northbridge"
+      ]
+    },
+    {
+      "organisation_name": "Bright Future University",
+      "sponsor_routes": [
+        "Skilled Worker",
+        "Student"
+      ],
+      "rating": "A",
+      "location": "Manchester",
+      "aliases": [
+        "BFU"
+      ]
+    },
+    {
+      "organisation_name": "CareWorks Group Limited",
+      "sponsor_routes": [
+        "Skilled Worker"
+      ],
+      "rating": "A",
+      "location": "Birmingham",
+      "aliases": [
+        "CareWorks"
+      ]
+    },
+    {
+      "organisation_name": "Acme Digital Ltd",
+      "sponsor_routes": [
+        "Skilled Worker"
+      ],
+      "rating": "A",
+      "location": "London",
+      "aliases": [
+        "Acme Digital UK"
+      ]
+    },
+    {
+      "organisation_name": "Octopus Energy Group",
+      "sponsor_routes": [
+        "Skilled Worker"
+      ],
+      "rating": "A",
+      "location": "London",
+      "aliases": [
+        "Octopus Energy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,695 @@
+{
+  "schema_version": 1,
+  "name": "real public-ad seed evaluation set",
+  "collected_at": "2026-06-04",
+  "collection_notes": [
+    "Seed set of real public job ads collected from maintainable/public sources: Lever, Greenhouse, and Reed public pages.",
+    "Student Circus was not used because it is login-walled, less reproducible, and likely to bias the dataset toward already-filtered sponsor roles.",
+    "Descriptions are short excerpts/evidence snippets rather than full copied job descriptions. Use source_url to re-fetch or manually review the current posting.",
+    "Labels are human seed labels for v1 engine development, not legal advice."
+  ],
+  "label_definitions": {
+    "worth_applying": "No detected blocker for the selected visa situation, but the user should still verify with the employer.",
+    "verify_first": "Potentially viable, but material information is missing or ambiguous.",
+    "likely_blocked": "Strong public evidence suggests the user should not spend time applying for this selected visa situation.",
+    "unknown": "The available public evidence is too incomplete or contradictory to judge."
+  },
+  "records": [
+    {
+      "record_id": "real-001",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/fresha/34abc3c7-4cbc-4d1e-b7e4-7ae7ff26a069/apply",
+      "title": "Graduate Sales Executive (London)",
+      "employer_raw": "Fresha",
+      "location": "London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Fresha record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "graduate",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Graduate Sales Executive in London. Application question asks: Do you have the legal right to work in London? Please select 'No' if you would require visa sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "Please select 'No' if you would require visa sponsorship"
+        },
+        {
+          "category": "right_to_work",
+          "text": "Do you have the legal right to work in London?"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Good graduate-role example. Graduate Route user may have current right to work, but future sponsorship needs are unclear. Sponsorship-needed user is likely blocked by the application wording."
+    },
+    {
+      "record_id": "real-002",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/fresha/92fcded5-8d77-48c1-8fce-868a0b1440c0/apply",
+      "title": "Graduate Sales Role (London)",
+      "employer_raw": "Fresha",
+      "location": "London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Fresha record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "graduate",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Graduate Sales Role in London. Application asks whether the candidate can work 5 days a week in the London office and whether they have the legal right to work in the UK. The right-to-work question says to select 'No' if visa sponsorship would be required.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "Please select 'No' if you would require visa sponsorship"
+        },
+        {
+          "category": "right_to_work",
+          "text": "Do you have the legal right to work in the UK?"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Duplicate-style Fresha graduate example useful for dedupe and repeated-phrase testing."
+    },
+    {
+      "record_id": "real-003",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/octoenergy/df8ba0a7-60d3-43a2-8f28-bfad9b833b73/apply",
+      "title": "Power Grid Analyst - 6 month FTC",
+      "employer_raw": "Octopus Energy Group",
+      "location": "London (GB) / Paris (FR)",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": true,
+        "matched_name": "Octopus Energy Group",
+        "notes": "Fixture-backed positive sponsor label. The stored excerpt says the employer is a registered visa sponsor; this is not proof that the specific role will be sponsored."
+      },
+      "role_level": "junior_or_mid",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Power Grid Analyst fixed-term role. Application says Octopus Energy is a registered visa sponsor and considers sponsorship case by case, but cannot offer it for every role.",
+      "evidence_phrases": [
+        {
+          "category": "sponsorship_positive",
+          "text": "registered visa sponsor"
+        },
+        {
+          "category": "ambiguous",
+          "text": "We consider sponsorship on a case by case basis"
+        },
+        {
+          "category": "ambiguous",
+          "text": "we are not able to offer it for every role"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Strong example of sponsor-positive but role-specific ambiguity."
+    },
+    {
+      "record_id": "real-004",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/octoenergy/f68d14db-4ed0-4f82-949e-c67850040e3b/apply",
+      "title": "Customer Care Executive - Complaints & Feedback",
+      "employer_raw": "Octopus Energy Group",
+      "location": "London (GB) / Brighton (GB)",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": true,
+        "matched_name": "Octopus Energy Group",
+        "notes": "Fixture-backed positive sponsor label. The stored excerpt says the employer is a registered visa sponsor; this is not proof that the specific role will be sponsored."
+      },
+      "role_level": "junior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Customer Care Executive role. Application states Octopus Energy is a registered visa sponsor, sponsorship is considered case by case, and asks candidates to select current right-to-work status including temporary right to work and sponsorship needs.",
+      "evidence_phrases": [
+        {
+          "category": "sponsorship_positive",
+          "text": "registered visa sponsor"
+        },
+        {
+          "category": "ambiguous",
+          "text": "case by case basis"
+        },
+        {
+          "category": "future_sponsorship_risk",
+          "text": "temporary right to work in the UK, and might need sponsorship in the future"
+        },
+        {
+          "category": "sponsorship_positive",
+          "text": "I will need visa sponsorship to start this role"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Useful for testing distinction between sponsor-positive employer and role-level uncertainty."
+    },
+    {
+      "record_id": "real-005",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/octoenergy/7f812f9c-052b-46c8-b24f-d61b59f73068/apply",
+      "title": "Octopus In Colour Internship 2026 - Octopus Energy Generation - Global Opportunities",
+      "employer_raw": "Octopus Energy Group",
+      "location": "London (GB)",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": true,
+        "matched_name": "Octopus Energy Group",
+        "notes": "Fixture-backed positive sponsor label. The stored excerpt says the employer is a registered visa sponsor; this is not proof that the specific role will be sponsored."
+      },
+      "role_level": "internship",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Internship dates are 6 July to 28 August 2026. Application asks whether the candidate has full right to work in the UK without sponsorship between those dates.",
+      "evidence_phrases": [
+        {
+          "category": "temporary_work_window",
+          "text": "between the 6th July - 28th August 2026"
+        },
+        {
+          "category": "no_sponsorship",
+          "text": "full right to work in the UK without sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Graduate Route outcome depends on whether the user's visa covers the internship dates. Sponsorship-needed user likely blocked."
+    },
+    {
+      "record_id": "real-006",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/gopuff/a7b6b36d-40ed-4fc8-ac8f-60e86f0676ff/apply",
+      "title": "Founder's Associate - Growth",
+      "employer_raw": "Gopuff",
+      "location": "London, England",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Gopuff record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "junior_or_mid",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Founder's Associate role in London. Application asks whether the candidate has the right to work in the UK, with options including yes, yes but needing sponsorship soon, and no needing sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "future_sponsorship_risk",
+          "text": "Yes, but I will need sponsorship soon"
+        },
+        {
+          "category": "sponsorship_needed_option",
+          "text": "No, I need sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "The form explicitly recognises sponsorship needs but does not say sponsorship is available."
+    },
+    {
+      "record_id": "real-007",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/moonpig/8ddcde5f-5c15-49b7-b7ca-c6264a704a79/apply",
+      "title": "Buyer",
+      "employer_raw": "Moonpig",
+      "location": "London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Moonpig record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "junior_or_mid",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Buyer role. Right-to-work application question includes Yes, No, and I require sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "right_to_work",
+          "text": "Do You have the Right to Work in the UK?"
+        },
+        {
+          "category": "sponsorship_needed_option",
+          "text": "I require sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Sponsorship option exists, but no role-level promise. Useful amber case."
+    },
+    {
+      "record_id": "real-008",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/moonpig/13e4e609-c967-4224-89f0-7f6d90d70433/apply",
+      "title": "Lead Counsel",
+      "employer_raw": "Moonpig",
+      "location": "London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Moonpig record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "senior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Lead Counsel role. Right-to-work question includes Yes, No, and I require sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "right_to_work",
+          "text": "Do You have the Right to Work in the UK?"
+        },
+        {
+          "category": "sponsorship_needed_option",
+          "text": "I require sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Not target role level, but useful for testing that role level and visa signal are separate."
+    },
+    {
+      "record_id": "real-009",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/pipedrive/7425154d-cecb-4f76-8f38-02caa723fff9/apply",
+      "title": "Growth Design Director",
+      "employer_raw": "Pipedrive",
+      "location": "UK, London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Pipedrive record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "senior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Growth Design Director role. Right-to-work section asks whether the candidate currently has the legal right to work in the UK without requiring visa sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "without requiring visa sponsorship"
+        },
+        {
+          "category": "right_to_work",
+          "text": "legal right to work in the UK"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Clear sponsorship risk wording. Senior role retained because phrase is useful for scanner testing."
+    },
+    {
+      "record_id": "real-010",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/pipedrive/b26d1dd3-2f24-4b34-8a01-2c4fbb3e2673/apply",
+      "title": "Director of Product Analytics",
+      "employer_raw": "Pipedrive",
+      "location": "UK, London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Pipedrive record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "senior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Director of Product Analytics role. Application asks whether the candidate has legal right to work in the UK without requiring visa sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "without requiring visa sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Repeated phrase from same employer, useful for dedupe and pattern consistency."
+    },
+    {
+      "record_id": "real-011",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/elfbeauty/f94573a7-1b6a-45e3-bb72-c2fe6c501471/apply",
+      "title": "Coordinator, Sales, International",
+      "employer_raw": "e.l.f. Beauty",
+      "location": "London, England",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no e.l.f. Beauty record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "junior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Coordinator sales role. UK screening question asks whether the candidate has right to work in the UK without sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "Right to work in the UK without sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Good junior commercial example with explicit without-sponsorship wording."
+    },
+    {
+      "record_id": "real-012",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/elfbeauty/b11c3c8c-de72-4477-83e4-ba2a99975c27/apply",
+      "title": "Interim, Coordinator, Inventory Control",
+      "employer_raw": "e.l.f. Beauty",
+      "location": "London, England",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no e.l.f. Beauty record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "junior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Interim Coordinator Inventory Control role. UK screening question asks whether the candidate has right to work in the UK without sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "Right to work in the UK without sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Junior operations-style example with repeated no-sponsorship wording."
+    },
+    {
+      "record_id": "real-013",
+      "source": "lever",
+      "source_url": "https://jobs.lever.co/kpler/ee53a8a3-cd4a-4045-8101-0232fa34f970/apply",
+      "title": "HR Business Partner",
+      "employer_raw": "Kpler",
+      "location": "London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Kpler record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "mid",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "eval_use": "classification_and_evidence",
+      "description_text": "HR Business Partner role in London. Application section asks about right to work and live in the UK without sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "Right to work and live in the UK without sponsorship"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Tests phrase variant that includes live in the UK."
+    },
+    {
+      "record_id": "real-014",
+      "source": "greenhouse",
+      "source_url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=7822520002",
+      "title": "Associate, Client Service, Bilingual Italian/English",
+      "employer_raw": "Guidepoint",
+      "location": "London, England, United Kingdom",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Guidepoint record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "associate",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Associate Client Service role. Posting states all applicants must have the right to work in the UK and application asks whether the candidate will require visa sponsorship at any point to work in the UK.",
+      "evidence_phrases": [
+        {
+          "category": "right_to_work",
+          "text": "All applicants must have the right to work in the UK"
+        },
+        {
+          "category": "future_sponsorship_risk",
+          "text": "Will you require visa sponsorship at any point to work in the UK?"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Strong target-user-adjacent associate role. Asks future sponsorship but does not explicitly reject it."
+    },
+    {
+      "record_id": "real-015",
+      "source": "greenhouse",
+      "source_url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=8152565002",
+      "title": "Sales Development Representative, Institutional",
+      "employer_raw": "Guidepoint",
+      "location": "London, England, United Kingdom",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Guidepoint record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "entry_level",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Entry-level Sales Development Representative role. Posting says all applicants must have right to work in the UK and asks if the candidate will require visa sponsorship at any point.",
+      "evidence_phrases": [
+        {
+          "category": "right_to_work",
+          "text": "All applicants must have the right to work in the UK"
+        },
+        {
+          "category": "future_sponsorship_risk",
+          "text": "Will you require visa sponsorship at any point to work in the UK?"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Good entry-level commercial role. Future-sponsorship question should not be treated as a hard rejection by itself."
+    },
+    {
+      "record_id": "real-016",
+      "source": "greenhouse",
+      "source_url": "https://boards.greenhouse.io/embed/job_app?for=guidepoint&token=7511119002",
+      "title": "Senior Associate, Client Service",
+      "employer_raw": "Guidepoint",
+      "location": "London, England, United Kingdom",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Guidepoint record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "associate",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Senior Associate Client Service role. Posting states applicants must have the right to work in the UK and asks whether visa sponsorship will be required at any point.",
+      "evidence_phrases": [
+        {
+          "category": "right_to_work",
+          "text": "All applicants must have the right to work in the UK"
+        },
+        {
+          "category": "future_sponsorship_risk",
+          "text": "Will you require visa sponsorship at any point to work in the UK?"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Useful repeated Greenhouse example with similar wording to test consistency."
+    },
+    {
+      "record_id": "real-017",
+      "source": "greenhouse",
+      "source_url": "https://boards.greenhouse.io/embed/job_app?token=7229030",
+      "title": "Senior / Staff Product Manager",
+      "employer_raw": "Recursion",
+      "location": "London, England; Oxford, England",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Recursion record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "senior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Product Manager role. Application asks the candidate to select countries where they have work authorization and asks whether they will now or in the future require visa sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "future_sponsorship_risk",
+          "text": "Will you now or in the future require visa sponsorship?"
+        },
+        {
+          "category": "right_to_work",
+          "text": "Please select the country where you have work authorization"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Senior role, but useful for 'now or in future' phrase scanning."
+    },
+    {
+      "record_id": "real-018",
+      "source": "greenhouse",
+      "source_url": "https://boards.greenhouse.io/embed/job_app?for=ebury&token=4640596101",
+      "title": "Senior Software Engineer (Fin-Crime)",
+      "employer_raw": "Ebury",
+      "location": "London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Ebury record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "senior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": false,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Senior Software Engineer role. Application asks whether the candidate has right to work in the UK without restriction and whether they will now or in the future require visa sponsorship.",
+      "evidence_phrases": [
+        {
+          "category": "permanent_right_to_work",
+          "text": "right to work in the UK without restriction"
+        },
+        {
+          "category": "future_sponsorship_risk",
+          "text": "Will you now or in the future require visa sponsorship to work in the UK?"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "verify_first",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Technical/senior, but important phrase combination: without restriction plus now/future sponsorship."
+    },
+    {
+      "record_id": "real-019",
+      "source": "greenhouse",
+      "source_url": "https://boards.greenhouse.io/embed/job_app?token=4899722008",
+      "title": "Fire Engineers UKI (All Levels)",
+      "employer_raw": "Jensen Hughes",
+      "location": "Birmingham, Edinburgh, Glasgow, London, Manchester, Remote",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Current sample sponsor fixture contains no Jensen Hughes record; expected no-match for fixture-based eval only."
+      },
+      "role_level": "graduate_to_senior",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Fire Engineers role across UK locations. Requirements say experience levels from graduate through technical director will be considered and include right to work in the UK.",
+      "evidence_phrases": [
+        {
+          "category": "graduate_signal",
+          "text": "Experience levels from Graduate through to Technical Director will be considered"
+        },
+        {
+          "category": "right_to_work",
+          "text": "Right to work in the UK"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "worth_applying",
+        "needs_sponsorship_before_start": "verify_first"
+      },
+      "human_notes": "Good example where right-to-work wording alone should not always become a hard block."
+    },
+    {
+      "record_id": "real-020",
+      "source": "reed",
+      "source_url": "https://www.reed.co.uk/jobs/graduate-structural-engineer/55107865",
+      "title": "Graduate Structural Engineer",
+      "employer_raw": "Unknown employer via Reed",
+      "location": "London",
+      "sponsor_match_expected": {
+        "available": true,
+        "is_match": false,
+        "matched_name": null,
+        "notes": "Employer is not named in the stored Reed excerpt; expected no-match for fixture-based eval only."
+      },
+      "role_level": "graduate",
+      "review_status": "confirmed",
+      "default_dashboard_fit": true,
+      "eval_use": "classification_and_evidence",
+      "description_text": "Graduate Structural Engineer role. Reed public snippet says the employer is unable to sponsor employees either now or in the future, so candidates must be eligible to work in the UK.",
+      "evidence_phrases": [
+        {
+          "category": "no_sponsorship",
+          "text": "unable to sponsor employees, either now or in the future"
+        },
+        {
+          "category": "right_to_work",
+          "text": "must be eligible to work in the UK"
+        }
+      ],
+      "expected_labels": {
+        "graduate_route": "likely_blocked",
+        "needs_sponsorship_before_start": "likely_blocked"
+      },
+      "human_notes": "Excellent hard-block graduate example. For a Graduate Route user who never needs future sponsorship this may be less severe, but typical international-student long-term conversion risk is high."
+    }
+  ]
+}

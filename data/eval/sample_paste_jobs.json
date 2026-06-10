@@ -1,0 +1,30 @@
+[
+  {
+    "job_id": "sample:graduate-marketing",
+    "source": "sample",
+    "title": "Graduate Marketing Analyst",
+    "employer_raw": "Example Ltd",
+    "description_text": "Join our graduate programme in London. We welcome applications from candidates with the right to work in the UK. Visa sponsorship available for suitable Skilled Worker roles.",
+    "location": "London",
+    "salary_text": "GBP 32,000 per year"
+  },
+  {
+    "job_id": "sample:no-sponsorship",
+    "source": "sample",
+    "title": "Junior Operations Associate",
+    "employer_raw": "NoSponsor Solutions",
+    "description_text": "Applicants must have the right to work in the UK. We cannot provide visa sponsorship for this role.",
+    "location": "Leeds",
+    "salary_text": null
+  },
+  {
+    "job_id": "sample:future-risk",
+    "source": "sample",
+    "title": "Graduate Consultant",
+    "employer_raw": "Northbridge Analytics",
+    "description_text": "Candidates must have the right to work in the UK now and in the future. The role may involve client travel.",
+    "location": "London",
+    "salary_text": "GBP 35,000 per year"
+  }
+]
+
